@@ -1,0 +1,41 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/alpinejs" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js@master/dist/countUp.umd.js"></script>
+
+<div class="overflow-hidden py-3" x-data="countUpData()" x-init="initFunc()" x-cloak>
+  <h1 class="text-center text-5xl font-medium text-red-600" id="countUpElement">0</h1>
+</div>
+
+<script>
+  let count = 2345;
+
+  function countUpData() {
+    return {
+      countUp: null,
+      timer: null,
+      fetchData() {
+        const addNum = _.random(100);
+        const newNum = count + addNum;
+        if (this.countUp) {
+          this.countUp.update(newNum);
+          count = newNum;
+        }
+      },
+      initFunc() {
+        this.countUp = new countUp.CountUp('countUpElement', count);
+        if (!this.countUp.error) {
+          this.countUp.start();
+        } else {
+          console.error(this.countUp.error);
+        }
+        this.timer = setInterval(() => {
+          this.fetchData()
+        }, 3000);
+      },
+      destroy() {
+        clearInterval(this.timer);
+      },
+    }
+  }
+</script>
