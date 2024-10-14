@@ -1,0 +1,74 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<style>
+  [x-cloak] {
+    display: none;
+  }
+</style>
+<div class="pt-12 max-w-sm mx-auto w-full">
+  <div class="w-full justify-center border p-12 rounded-xl" x-data="getData()" x-init="initFunc()" x-cloak>
+    <template x-if="inited && remainingTime > 0">
+      <div class="gap-4 text-center w-full flex mx-auto justify-between">
+        <div w-full>
+          <div class="text-3xl font-medium text-gray-500" x-text="formatTime(remainingTime).days"></div>
+          <div class="text-sm text-orange-500">Days</div>
+        </div>
+        <div w-full>
+          <div class="text-3xl font-medium text-gray-500" x-text="formatTime(remainingTime).hours"></div>
+          <div class="text-sm text-orange-500">Hours</div>
+        </div>
+        <div w-full>
+          <div class="text-3xl font-medium text-gray-500" x-text="formatTime(remainingTime).minutes"></div>
+          <div class="text-sm text-orange-500">Minutes</div>
+        </div>
+        <div w-full>
+          <div class="text-3xl font-medium text-gray-500" x-text="formatTime(remainingTime).seconds"></div>
+          <div class="text-sm text-orange-500">Seconds</div>
+        </div>
+      </div>
+    </template>
+    <template x-if="inited && remainingTime <= 0">
+      <div class="text-center">
+        <div class="text-xl font-bold">Countdown has ended!</div>
+      </div>
+    </template>
+  </div>
+</div>
+<script>
+  const endDateString = '2024-11-03T23:59:59';
+
+  function getData() {
+    return {
+      inited: false,
+      endDate: new Date(endDateString).getTime(),
+      remainingTime: 0,
+      formatTime(time) {
+        const d = Math.floor(time / (1000 * 60 * 60 * 24));
+        const days = d < 10 ? `0${d}` : d;
+        const h = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const hours = h < 10 ? `0${h}` : h;
+        const m = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+        const minutes = m < 10 ? `0${m}` : m;
+        const s = Math.floor((time % (1000 * 60)) / 1000);
+        const seconds = s < 10 ? `0${s}` : s;
+        return { days, hours, minutes, seconds };
+      },
+      timer: null,
+      updateTime() {
+        const now = new Date().getTime();
+        const remainingTime = this.endDate - now;
+        this.remainingTime = remainingTime > 0 ? remainingTime : 0;
+      },
+      initFunc() {
+        this.updateTime()
+        this.inited = true;
+        this.timer = setInterval(() => {
+          this.updateTime()
+        }, 1000);
+      },
+      destroy() {
+        clearInterval(this.timer);
+      },
+    }
+  }
+</script>
