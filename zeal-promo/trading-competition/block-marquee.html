@@ -1,0 +1,142 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
+
+<style>
+  [x-cloak] {
+    display: none;
+  }
+
+  .marquee {
+    width: 90%;
+    height: 34px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #153791;
+  }
+
+  .marquee:before,
+  .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 34px;
+    content: "";
+    z-index: 1;
+  }
+
+  .marquee:before {
+    left: 0;
+    /* background: linear-gradient(to right, white 5%, transparent 100%); */
+    background: linear-gradient(to right, #153791 25%, transparent 100%);
+  }
+
+  .marquee:after {
+    right: 0;
+    /* background: linear-gradient(to left, white 5%, transparent 100%); */
+    background: linear-gradient(to left, #153791 25%, transparent 100%);
+  }
+
+  .marquee__content {
+    display: inline-flex;
+    gap: 30px;
+    padding-left: 100%;
+    line-height: 34px;
+    animation: marquee 20s linear infinite;
+  }
+
+  .marquee__content:hover {
+    animation-play-state: paused;
+  }
+
+  .text-container {
+    box-sizing: border-box;
+    width: 160px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+</style>
+
+<div class="py-10 w-full" style="background-color: #153791;">
+  <div class="marquee overflow-hidden" x-data="marqueeData()" x-init="initFunc()"
+    @form-submit.window="formSubmitListener" x-cloak>
+    <div class="marquee__content">
+      <template x-for="(marqueeItem, idx) in marqueeList" :key="idx">
+        <p class="text-container" :style="'background-image: url(' + marqueeItem.bgImg + ');'"
+          x-text="marqueeItem.text">
+        </p>
+      </template>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  const strapi = new Strapi({
+    url: "https://service-growth-promo.onrender.com",
+  })
+
+  const marqueeBgImages = [
+    'https://optim.tildacdn.one/tild3935-6531-4337-a237-383362613936/-/resize/320x/-/format/webp/32x.png',
+    'https://optim.tildacdn.one/tild3832-6165-4934-b636-383239313332/-/resize/320x/-/format/webp/22x.png',
+    'https://optim.tildacdn.one/tild6531-3161-4963-a130-333133376263/-/resize/320x/-/format/webp/12x.png'
+  ]
+
+  function marqueeData() {
+    return {
+      marqueeList: [],
+      timer: null,
+      fetchData() {
+        const _this = this;
+        strapi.find('players', {
+          pagination: {
+            start: 0,
+            limit: 10,
+          },
+        }).then(response => {
+          const players = strapiParse(response)
+          console.log(players)
+          _this.marqueeList = players.map((item, index) => ({
+            text: `${item.name} 已报名`,
+            bgImg: marqueeBgImages[index % 3 || 0]
+          }));
+        })
+      },
+      initFunc() {
+        this.fetchData();
+        this.timer = setInterval(() => {
+          this.fetchData()
+        }, 1000 * 60);
+      },
+      formSubmitListener() {
+        setTimeout(() => {
+          this.fetchData()
+        }, 3000);
+      },
+      destroy() {
+        clearInterval(this.timer);
+      },
+    }
+  }
+</script>

@@ -1,0 +1,1218 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://ws.tildacdn.com">
+  <link rel="dns-prefetch" href="https://static.tildacdn.one">
+  <link rel="shortcut icon"
+    href="https://static.tildacdn.one/tild3563-3262-4833-b931-666466643964/android-chrome-192x1.ico"
+    type="image/x-icon">
+  <!-- Assets -->
+  <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async="" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-grid-3.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';">
+  <link rel="stylesheet"
+    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.css?t=1728916484" type="text/css"
+    media="all" onerror="this.loaderr='y';">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;subset=latin,cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-forms-1.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700"
+    type="text/css">
+  <link rel="stylesheet" type="text/css" href="/custom.css?t=1728916484">
+  <script nomodule="" src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function t_onReady(func) {
+      if (document.readyState != 'loading') {
+        func();
+      } else {
+        document.addEventListener('DOMContentLoaded', func);
+      }
+    }
+
+    function t_onFuncLoad(funcName, okFunc, time) {
+      if (typeof window[funcName] === 'function') {
+        okFunc();
+      } else {
+        setTimeout(function () {
+          t_onFuncLoad(funcName, okFunc, time);
+        }, (time || 100));
+      }
+    }
+
+    function t396_scaleInitial__getElementsToScale(t) {
+      return t ? Array.prototype.slice.call(t.children).filter(function (t) {
+        return t && (t.classList.contains("t396__elem") || t.classList.contains("t396__group"))
+      }) : []
+    }
+
+    function t396_getFieldValue(t, e, r, a) {
+      var i = a[a.length - 1],
+        l = r === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + r);
+      if (!l)
+        for (var n = 0; n < a.length; n++) {
+          var o = a[n];
+          if (!(o <= r) && (l = o === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + o))) break
+        }
+      return l
+    }
+  </script>
+  <script src="https://static.tildacdn.one/js/jquery-1.10.2.min.js" charset="utf-8"
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-scripts-3.0.min.js" charset="utf-8" defer=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.js?t=1728916484"
+    charset="utf-8" async="" onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-lazyload-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-1.1.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-forms-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-forms-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-events-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script type="text/javascript" src="https://static.tildacdn.com/js/tilda-forms-dict-1.0.min.js"></script>
+</head>
+
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+<script src="https://unpkg.com/dayjs@1.8.9/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/utc.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/isSameOrAfter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js@master/dist/countUp.umd.js"></script>
+
+<script>
+  // install required dayjs plugins
+  dayjs.extend(dayjs_plugin_utc)
+  dayjs.extend(dayjs_plugin_isSameOrAfter)
+
+  const timeMaps = {
+    step1_entry: [dayjs.utc('2024-10-21T00:00:00.000Z'), dayjs.utc('2024-11-04T00:00:00.000Z')],
+    step1_match: [dayjs.utc('2024-11-04T00:00:00.000Z'), dayjs.utc('2024-11-18T00:00:00.000Z')],
+    step2_entry: [dayjs.utc('2024-11-18T00:00:00.000Z'), dayjs.utc('2024-12-02T00:00:00.000Z')],
+    step2_match: [dayjs.utc('2024-12-02T00:00:00.000Z'), dayjs.utc('2024-12-16T00:00:00.000Z')],
+    step3_entry: [dayjs.utc('2024-12-16T00:00:00.000Z'), dayjs.utc('2025-01-06T00:00:00.000Z')],
+    step3_match: [dayjs.utc('2025-01-06T00:00:00.000Z'), dayjs.utc('2025-01-19T00:00:00.000Z')],
+  }
+
+  function getCurrentStep() {
+    if (now.isBefore(timeMaps['step1_match'][0])) {
+      return 'step1_entry'
+    } else if (now.isSameOrAfter(timeMaps['step1_match'][0]) && now.isBefore(timeMaps['step1_match'][1])) {
+      return 'step1_match'
+    } else if (now.isSameOrAfter(timeMaps['step2_entry'][0]) && now.isBefore(timeMaps['step2_entry'][1])) {
+      return 'step2_entry'
+    } else if (now.isSameOrAfter(timeMaps['step2_match'][0]) && now.isBefore(timeMaps['step2_match'][1])) {
+      return 'step2_match'
+    } else if (now.isSameOrAfter(timeMaps['step3_entry'][0]) && now.isBefore(timeMaps['step3_entry'][1])) {
+      return 'step3_entry'
+    } else if (now.isSameOrAfter(timeMaps['step3_match'][0]) && now.isBefore(timeMaps['step3_match'][1])) {
+      return 'step3_match'
+    } else if (now.isAfter(timeMaps['step3_match'][1])) {
+      return 'ended'
+    }
+    return 'step1_entry';
+  }
+</script>
+
+<div id="rec811401116" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"
+  x-data="getBonusData()" x-init="initFunc()" x-cloak>
+  <style>
+    #rec811401116 .t396__artboard {
+      height: 620px;
+      background-color: #153792;
+    }
+
+    #rec811401116 .t396__filter {
+      height: 620px;
+    }
+
+    #rec811401116 .t396__carrier {
+      height: 620px;
+      background-position: center center;
+      background-attachment: scroll;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width:1199px) {
+
+      #rec811401116 .t396__artboard,
+      #rec811401116 .t396__filter,
+      #rec811401116 .t396__carrier {
+        height: 590px;
+      }
+
+      #rec811401116 .t396__filter {}
+
+      #rec811401116 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+
+      #rec811401116 .t396__artboard,
+      #rec811401116 .t396__filter,
+      #rec811401116 .t396__carrier {
+        height: 300px;
+      }
+
+      #rec811401116 .t396__filter {}
+
+      #rec811401116 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+
+      #rec811401116 .t396__artboard,
+      #rec811401116 .t396__filter,
+      #rec811401116 .t396__carrier {
+        height: 310px;
+      }
+
+      #rec811401116 .t396__filter {}
+
+      #rec811401116 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+
+      #rec811401116 .t396__artboard,
+      #rec811401116 .t396__filter,
+      #rec811401116 .t396__carrier {
+        height: 600px;
+      }
+
+      #rec811401116 .t396__filter {}
+
+      #rec811401116 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1709093368810"] {
+      z-index: 2;
+      top: 0px;
+      left: calc(50% - 600px + -100px);
+      width: 1400px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1709093368810"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1709096725245"] {
+      color: #7d7d7d;
+      z-index: 3;
+      top: 69px;
+      left: calc(50% - 600px + 54px);
+      width: 191px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1709096725245"] .tn-atom {
+      color: #7d7d7d;
+      font-size: 47px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 600;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec811401116 .tn-elem[data-elem-id="1709096725245"] {
+        top: -13px;
+        left: calc(50% - 480px + -581px);
+      }
+    }
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887144852"] {
+      z-index: 4;
+      top: 20px;
+      left: calc(50% - 600px + 53px);
+      width: 1092px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887144852"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887236641"] {
+      color: #c29a70;
+      text-align: center;
+      z-index: 5;
+      top: 444px;
+      left: calc(50% - 600px + 222px);
+      width: 208px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887236641"] .tn-atom {
+      color: #c29a70;
+      font-size: 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887324454"] {
+      color: #c29a70;
+      text-align: center;
+      z-index: 6;
+      top: 1141px;
+      left: calc(50% - 600px + 210px);
+      width: 208px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887324454"] .tn-atom {
+      color: #c29a70;
+      font-size: 70px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887378658"] {
+      z-index: 7;
+      top: 1464px;
+      left: calc(50% - 600px + 110px);
+      width: 432px;
+      height: 100px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887378658"] .tn-atom {
+      background-color: #fff705;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728899828119"] {
+      color: #7a95ee;
+      z-index: 10;
+      top: 124px;
+      left: calc(50% - 600px + 648px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728899828119"] .tn-atom {
+      color: #7a95ee;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728899850202"] {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      z-index: 11;
+      top: 152px;
+      left: calc(50% - 600px + 648px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728899850202"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 24px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.8;
+      font-weight: 500;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728899971572"] {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: center;
+      z-index: 12;
+      top: 152px;
+      left: calc(50% - 600px + 838px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728899971572"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 24px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.8;
+      font-weight: 500;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728899983739"] {
+      color: #7a95ee;
+      text-align: center;
+      z-index: 13;
+      top: 123px;
+      left: calc(50% - 600px + 846px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728899983739"] .tn-atom {
+      color: #7a95ee;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900002139"] {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: right;
+      z-index: 14;
+      top: 152px;
+      left: calc(50% - 600px + 1031px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900002139"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0turn, rgba(228, 234, 255, 1) 0%, rgba(183, 200, 255, 1) 25%, rgba(217, 226, 255, 1) 49%, rgba(184, 201, 255, 1) 74%, rgba(226, 233, 255, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 24px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.8;
+      font-weight: 500;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887274531"] {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: center;
+      z-index: 8;
+      top: 307px;
+      left: calc(50% - 600px + 234px);
+      width: 10px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887274531"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 70px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887399812"] {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: center;
+      z-index: 9;
+      top: 329px;
+      left: calc(50% - 600px + 199px);
+      width: 10px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887399812"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 50px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887274531"] {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: center;
+      z-index: 8;
+      top: 307px;
+      left: calc(50% - 600px + 234px);
+      width: 10px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887274531"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 70px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728887399812"] {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      text-align: center;
+      z-index: 9;
+      top: 329px;
+      left: calc(50% - 600px + 199px);
+      width: 10px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728887399812"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.5turn, rgba(235, 195, 157, 1) 0%, rgba(255, 244, 210, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 50px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900003572"] {
+      color: #7a95ee;
+      text-align: right;
+      z-index: 15;
+      top: 123px;
+      left: calc(50% - 600px + 1043px);
+      width: 47px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900003572"] .tn-atom {
+      color: #7a95ee;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900098900"] {
+      z-index: 16;
+      top: 193px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900098900"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900165323"] {
+      z-index: 17;
+      top: 236px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900165323"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900168714"] {
+      z-index: 18;
+      top: 279px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900168714"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900171024"] {
+      z-index: 19;
+      top: 322px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900171024"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900172536"] {
+      z-index: 20;
+      top: 365px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900172536"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900173975"] {
+      z-index: 21;
+      top: 408px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900173975"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900175535"] {
+      z-index: 22;
+      top: 451px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900175535"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900177742"] {
+      z-index: 23;
+      top: 494px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900177742"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900179121"] {
+      z-index: 24;
+      top: 537px;
+      left: calc(50% - 600px + 648px);
+      width: 444px;
+      height: 1px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900179121"] .tn-atom {
+      opacity: 0.6;
+      background-color: #5e87ef;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec811401116 .tn-elem[data-elem-id="1728900274508"] {
+      color: #dde5ff;
+      text-align: center;
+      z-index: 25;
+      top: 132px;
+      left: calc(50% - 600px + 146px);
+      width: 360px;
+    }
+
+    #rec811401116 .tn-elem[data-elem-id="1728900274508"] .tn-atom {
+      color: #dde5ff;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+  </style>
+  <div class="t396">
+    <div class="t396__artboard rendered" data-artboard-recid="811401116" data-artboard-screens="320,480,640,960,1200"
+      data-artboard-height="620" data-artboard-valign="center" data-artboard-upscale="grid"
+      data-artboard-height-res-320="600" data-artboard-upscale-res-320="window" data-artboard-height-res-480="310"
+      data-artboard-upscale-res-480="window" data-artboard-height-res-640="300" data-artboard-upscale-res-640="window"
+      data-artboard-height-res-960="590" data-artboard-upscale-res-960="window" data-artboard-proxy-min-offset-top="0"
+      data-artboard-proxy-min-height="620" data-artboard-proxy-max-height="620">
+      <div class="t396__carrier" data-artboard-recid="811401116"></div>
+      <div class="t396__filter" data-artboard-recid="811401116"></div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728887144852" data-elem-id="1728887144852"
+        data-elem-type="image" data-field-top-value="20" data-field-left-value="53" data-field-width-value="1092"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2184" data-field-fileheight-value="1160"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 151px; top: 20px; width: 1092px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6663-6465-4166-a631-353630373765/32x_1.png" alt=""
+            imgfield="tn_img_1728887144852"
+            src="https://optim.tildacdn.one/tild6663-6465-4166-a631-353630373765/-/format/webp/32x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728887236641" data-elem-id="1728887236641" data-elem-type="text"
+        data-field-top-value="444" data-field-left-value="222" data-field-width-value="208" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 444px; left: 320px; width: 208px;">
+        <div class="tn-atom" field="tn_text_1728887236641" style="line-height: 25px;">每日实时更新<br>2025年1月6日开启</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728887324454" data-elem-id="1728887324454" data-elem-type="text"
+        data-field-top-value="1141" data-field-left-value="210" data-field-width-value="208"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 1141px; left: 308px; width: 208px;">
+        <div class="tn-atom" field="tn_text_1728887324454" style="line-height: 109px;"></div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728887378658" data-elem-id="1728887378658"
+        data-elem-type="shape" data-field-top-value="1464" data-field-left-value="110" data-field-height-value="100"
+        data-field-width-value="432" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 432px; left: 208px; top: 1464px; height: 100px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728899828119" data-elem-id="1728899828119" data-elem-type="text"
+        data-field-top-value="124" data-field-left-value="648" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 124px; left: 746px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728899828119" style="line-height: 28px;">排名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728899850202" data-elem-id="1728899850202" data-elem-type="text"
+        data-field-top-value="152" data-field-left-value="648" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 152px; left: 746px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728899850202" style="line-height: 43px;">
+          01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728899971572" data-elem-id="1728899971572" data-elem-type="text"
+        data-field-top-value="152" data-field-left-value="848" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 152px; left: 946px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728899971572" style="line-height: 43px;">
+          25%<br>18%<br>12%<br>10%<br>9%<br>8%<br>6%<br>5%<br>4%<br>3%</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728899983739" data-elem-id="1728899983739" data-elem-type="text"
+        data-field-top-value="123" data-field-left-value="846" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 123px; left: 944px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728899983739" style="line-height: 28px;">比例</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900002139" data-elem-id="1728900002139" data-elem-type="text"
+        data-field-top-value="152" data-field-left-value="-118" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="right" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 152px; left: 1133px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728900002139" style="line-height: 43px;" x-html="bonusHtml"></div>
+      </div>
+
+      <div class="t396__elem tn-elem tn-elem__8114011161728887274531" data-elem-id="1728887274531" data-elem-type="text"
+        data-field-top-value="307" data-field-left-value="234" data-field-width-value="10" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 307px; left: 332px; width: 10px;">
+        <div class="tn-atom" field="tn_text_1728887274531" style="line-height: 109px;" id="countUpElement">0</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728887399812" data-elem-id="1728887399812" data-elem-type="text"
+        data-field-top-value="329" data-field-left-value="199" data-field-width-value="10" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 329px; left: 297px; width: 10px;">
+        <div class="tn-atom" field="tn_text_1728887399812" style="line-height: 78px;">¥</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900003572" data-elem-id="1728900003572" data-elem-type="text"
+        data-field-top-value="123" data-field-left-value="1043" data-field-width-value="47" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 123px; left: 1141px; width: 47px;">
+        <div class="tn-atom" field="tn_text_1728900003572" style="line-height: 28px;">奖金</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900098900" data-elem-id="1728900098900"
+        data-elem-type="shape" data-field-top-value="193" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 193px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900165323" data-elem-id="1728900165323"
+        data-elem-type="shape" data-field-top-value="236" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 236px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900168714" data-elem-id="1728900168714"
+        data-elem-type="shape" data-field-top-value="279" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 279px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900171024" data-elem-id="1728900171024"
+        data-elem-type="shape" data-field-top-value="322" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 322px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900172536" data-elem-id="1728900172536"
+        data-elem-type="shape" data-field-top-value="365" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 365px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900173975" data-elem-id="1728900173975"
+        data-elem-type="shape" data-field-top-value="408" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 408px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900175535" data-elem-id="1728900175535"
+        data-elem-type="shape" data-field-top-value="451" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 451px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900177742" data-elem-id="1728900177742"
+        data-elem-type="shape" data-field-top-value="494" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 494px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900179121" data-elem-id="1728900179121"
+        data-elem-type="shape" data-field-top-value="537" data-field-left-value="648" data-field-height-value="1"
+        data-field-width-value="444" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 444px; left: 746px; top: 537px; height: 1px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8114011161728900274508" data-elem-id="1728900274508" data-elem-type="text"
+        data-field-top-value="132" data-field-left-value="146" data-field-width-value="360" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 132px; left: 244px; width: 360px;">
+        <div class="tn-atom" field="tn_text_1728900274508" style="line-height: 28px;">报名期间，交易手数也能累计奖金池</div>
+      </div>
+    </div>
+  </div>
+  <script>t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('811401116'); }); });</script>
+</div>
+
+<script>
+  // let count = 31000;
+
+  function getBonusData() {
+    return {
+      bonus: 31000,
+      countUp: null,
+      timer: null,
+      bonusHtml: `
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+        <br>
+        -
+      `,
+      fetchData() {
+        const addNum = _.random(100);
+        const newNum = this.bonus + addNum;
+        if (this.countUp) {
+          this.countUp.update(newNum);
+          this.bonus = newNum;
+          this.getBonusHtml()
+        }
+      },
+      initFunc() {
+        this.getBonusHtml()
+        this.countUp = new countUp.CountUp('countUpElement', this.bonus);
+        if (!this.countUp.error) {
+          this.countUp.start();
+        } else {
+          console.error(this.countUp.error);
+        }
+        this.timer = setInterval(() => {
+          this.fetchData()
+        }, 1000 * 30);
+      },
+      getBonusHtml() {
+        const html = `
+        ${formatBonus(0.25 * this.bonus)}
+        <br>
+        ${formatBonus(0.18 * this.bonus)}
+        <br>
+        ${formatBonus(0.12 * this.bonus)}
+        <br>
+        ${formatBonus(0.1 * this.bonus)}
+        <br>
+        ${formatBonus(0.09 * this.bonus)}
+        <br>
+        ${formatBonus(0.08 * this.bonus)}
+        <br>
+        ${formatBonus(0.06 * this.bonus)}
+        <br>
+        ${formatBonus(0.05 * this.bonus)}
+        <br>
+        ${formatBonus(0.04 * this.bonus)}
+        <br>
+        ${formatBonus(0.03 * this.bonus)}
+        `;
+        this.bonusHtml = html;
+      },
+      destroy() {
+        clearInterval(this.timer);
+      },
+    }
+  }
+
+  function formatBonus(num) {
+    if (`${num}`.indexOf('.') >= 0) {
+      return Number(num)?.toFixed(2)
+    } else {
+      return `${num}`
+    }
+  }
+</script>
