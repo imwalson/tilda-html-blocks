@@ -116,7 +116,6 @@
           sort: "id:desc",
         }).then(response => {
           const players = strapiParse(response)
-          console.log(players)
           _this.marqueeList = players.map((item, index) => ({
             text: `${item.name} 已报名`,
             bgImg: marqueeBgImages[index % 3 || 0]
