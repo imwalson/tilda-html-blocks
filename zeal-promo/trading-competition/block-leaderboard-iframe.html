@@ -90,7 +90,9 @@
   <script src="https://unpkg.com/dayjs@1.8.9/dayjs.min.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.9/plugin/utc.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.9/plugin/isSameOrAfter.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/resize@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script> -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
@@ -147,7 +149,7 @@
 
 <body>
   <div id="rec811591673" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"
-    x-data="getLeaderboardData()" x-init="initFunc()" x-cloak>
+    x-data="getLeaderboardData()" x-init="initFunc()" x-resize="resizeHandler($width, $height)" x-cloak>
     <div class="t396">
       <div class="t396__artboard rendered" data-artboard-recid="811591673" data-artboard-screens="320,480,640,960,1200"
         data-artboard-height="920" data-artboard-valign="center" data-artboard-upscale="grid"
@@ -1565,6 +1567,8 @@
   <script>
     function getLeaderboardData() {
       return {
+        width: 0,
+        height: 0,
         visible: false,
         updateDate: '',
         row1: {
@@ -1712,6 +1716,10 @@
           this.updateDate = now.format('截至YYYY年MM月DD日')
           this.fetchData();
         },
+        resizeHandler(width, height) {
+          // console.log(width, height)
+          window.parent.postMessage(`${width}/${height}`, "*");
+        }
       }
     }
   </script>
