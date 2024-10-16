@@ -26,7 +26,6 @@
     onerror="this.loaderr='y';">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700"
     type="text/css">
-  <link rel="stylesheet" type="text/css" href="/custom.css?t=1728916484">
   <script nomodule="" src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
   <script type="text/javascript">
     function t_onReady(func) {
@@ -149,7 +148,7 @@
 
 <body>
   <div id="rec811591673" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"
-    x-data="getLeaderboardData()" x-init="initFunc()" x-resize="resizeHandler($width, $height)" x-cloak>
+    x-data="getLeaderboardData()" x-init="initFunc($el)" x-resize="resizeHandler($width, $height)" x-cloak>
     <div class="t396">
       <div class="t396__artboard rendered" data-artboard-recid="811591673" data-artboard-screens="320,480,640,960,1200"
         data-artboard-height="920" data-artboard-valign="center" data-artboard-upscale="grid"
@@ -1682,7 +1681,6 @@
             sort: "version:desc",
           }).then(response => {
             const leaderboards = strapiParse(response)
-            console.log(leaderboards)
             const sortedData = _.sortBy(sampleLeaderboardData, [(n) => (n?.rank || 0)]);
             for (let i = 1; i < 11; i++) {
               const record = sortedData[i - 1];
@@ -1712,12 +1710,12 @@
             }
           })
         },
-        initFunc() {
+        initFunc($el) {
           this.updateDate = now.format('截至YYYY年MM月DD日')
           this.fetchData();
+          this.resizeHandler($el.clientWidth, $el.clientHeight);
         },
         resizeHandler(width, height) {
-          // console.log(width, height)
           window.parent.postMessage(`${width}/${height}`, "*");
         }
       }

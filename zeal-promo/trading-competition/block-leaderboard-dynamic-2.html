@@ -6,6 +6,8 @@
 
 <script>
   window.addEventListener('message', function (event) {
-    console.log("Message received from the child: " + event.data); // Message received from child
+    if (event.origin === 'https://imwalson.github.io' && typeof event.data === "string" && event.data.includes('/')) {
+      document.getElementById('block-leaderboard-iframe').style["aspect-ratio"] = event.data;
+    }
   });
 </script>
