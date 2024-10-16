@@ -1,0 +1,808 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://ws.tildacdn.com">
+  <link rel="dns-prefetch" href="https://static.tildacdn.one">
+  <link rel="shortcut icon"
+    href="https://static.tildacdn.one/tild3563-3262-4833-b931-666466643964/android-chrome-192x1.ico"
+    type="image/x-icon">
+  <!-- Assets -->
+  <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async="" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-grid-3.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';">
+  <link rel="stylesheet"
+    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.css?t=1728916484" type="text/css"
+    media="all" onerror="this.loaderr='y';">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;subset=latin,cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-forms-1.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700"
+    type="text/css">
+  <link rel="stylesheet" type="text/css" href="/custom.css?t=1728916484">
+  <script nomodule="" src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function t_onReady(func) {
+      if (document.readyState != 'loading') {
+        func();
+      } else {
+        document.addEventListener('DOMContentLoaded', func);
+      }
+    }
+
+    function t_onFuncLoad(funcName, okFunc, time) {
+      if (typeof window[funcName] === 'function') {
+        okFunc();
+      } else {
+        setTimeout(function () {
+          t_onFuncLoad(funcName, okFunc, time);
+        }, (time || 100));
+      }
+    }
+
+    function t396_scaleInitial__getElementsToScale(t) {
+      return t ? Array.prototype.slice.call(t.children).filter(function (t) {
+        return t && (t.classList.contains("t396__elem") || t.classList.contains("t396__group"))
+      }) : []
+    }
+
+    function t396_getFieldValue(t, e, r, a) {
+      var i = a[a.length - 1],
+        l = r === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + r);
+      if (!l)
+        for (var n = 0; n < a.length; n++) {
+          var o = a[n];
+          if (!(o <= r) && (l = o === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + o))) break
+        }
+      return l
+    }
+  </script>
+  <script src="https://static.tildacdn.one/js/jquery-1.10.2.min.js" charset="utf-8"
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-scripts-3.0.min.js" charset="utf-8" defer=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.js?t=1728916484"
+    charset="utf-8" async="" onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-lazyload-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-1.1.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-forms-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-forms-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-events-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script type="text/javascript" src="https://static.tildacdn.com/js/tilda-forms-dict-1.0.min.js"></script>
+</head>
+
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+<link rel="stylesheet" href="/css/tradingcontest.zh.block-schedule.css">
+<!-- <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks@main/css/tradingcontest.zh.block-schedule.css"> -->
+<script src="https://unpkg.com/dayjs@1.8.9/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/utc.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/isSameOrAfter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js@master/dist/countUp.umd.js"></script>
+
+<script>
+  // install required dayjs plugins
+  dayjs.extend(dayjs_plugin_utc)
+  dayjs.extend(dayjs_plugin_isSameOrAfter)
+  const now = dayjs()
+
+  const timeMaps = {
+    step1_entry: [dayjs.utc('2024-10-21T00:00:00.000Z'), dayjs.utc('2024-11-04T00:00:00.000Z')],
+    step1_match: [dayjs.utc('2024-11-04T00:00:00.000Z'), dayjs.utc('2024-11-18T00:00:00.000Z')],
+    step2_entry: [dayjs.utc('2024-11-18T00:00:00.000Z'), dayjs.utc('2024-12-02T00:00:00.000Z')],
+    step2_match: [dayjs.utc('2024-12-02T00:00:00.000Z'), dayjs.utc('2024-12-16T00:00:00.000Z')],
+    step3_entry: [dayjs.utc('2024-12-16T00:00:00.000Z'), dayjs.utc('2025-01-06T00:00:00.000Z')],
+    step3_match: [dayjs.utc('2025-01-06T00:00:00.000Z'), dayjs.utc('2025-01-19T00:00:00.000Z')],
+  }
+
+  function getCurrentStep() {
+    if (now.isBefore(timeMaps['step1_match'][0])) {
+      return 'step1_entry'
+    } else if (now.isSameOrAfter(timeMaps['step1_match'][0]) && now.isBefore(timeMaps['step1_match'][1])) {
+      return 'step1_match'
+    } else if (now.isSameOrAfter(timeMaps['step2_entry'][0]) && now.isBefore(timeMaps['step2_entry'][1])) {
+      return 'step2_entry'
+    } else if (now.isSameOrAfter(timeMaps['step2_match'][0]) && now.isBefore(timeMaps['step2_match'][1])) {
+      return 'step2_match'
+    } else if (now.isSameOrAfter(timeMaps['step3_entry'][0]) && now.isBefore(timeMaps['step3_entry'][1])) {
+      return 'step3_entry'
+    } else if (now.isSameOrAfter(timeMaps['step3_match'][0]) && now.isBefore(timeMaps['step3_match'][1])) {
+      return 'step3_match'
+    } else if (now.isAfter(timeMaps['step3_match'][1])) {
+      return 'ended'
+    }
+    return 'step1_entry';
+  }
+</script>
+
+
+<div id="rec811591671" class="r t-rec" style=" " data-animationappear="off" data-record-type="396">
+  <div class="t396">
+    <div class="t396__artboard rendered" data-artboard-recid="811591671" data-artboard-screens="320,480,640,960,1200"
+      data-artboard-height="560" data-artboard-valign="center" data-artboard-upscale="grid"
+      data-artboard-height-res-320="640" data-artboard-height_vh-res-320="" data-artboard-upscale-res-320="window"
+      data-artboard-height-res-480="260" data-artboard-upscale-res-480="window" data-artboard-height-res-640="300"
+      data-artboard-upscale-res-640="window" data-artboard-height-res-960="510" data-artboard-upscale-res-960="window"
+      data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="560" data-artboard-proxy-max-height="560">
+      <div class="t396__carrier" data-artboard-recid="811591671"></div>
+      <div class="t396__filter" data-artboard-recid="811591671"></div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886068021" data-elem-id="1728886068021"
+        data-elem-type="image" data-field-top-value="11" data-field-left-value="0" data-field-width-value="560"
+        data-field-axisy-value="top" data-field-axisx-value="center" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="1568" data-field-fileheight-value="308"
+        data-field-top-res-320-value="5" data-field-left-res-320-value="0" data-field-width-res-320-value="290"
+        data-field-container-res-320-value="grid" data-field-top-res-480-value="6" data-field-left-res-480-value="0"
+        data-field-width-res-480-value="284" data-field-top-res-640-value="2" data-field-width-res-640-value="320"
+        data-field-top-res-960-value="20" data-field-left-res-960-value="16"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 420.5px; top: 11px; width: 560px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3637-3337-4439-b831-653062353334/12x.png" alt=""
+            imgfield="tn_img_1728886068021"
+            src="https://optim.tildacdn.one/tild3637-3337-4439-b831-653062353334/-/format/webp/12x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886447104" data-elem-id="1728886447104"
+        data-elem-type="image" data-field-top-value="-84" data-field-left-value="0" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-320-value="-43" data-field-width-res-320-value="110" data-field-top-res-480-value="-40"
+        data-field-left-res-480-value="0" data-field-width-res-480-value="110" data-field-top-res-640-value="-51"
+        data-field-left-res-640-value="0" data-field-width-res-640-value="120" data-field-top-res-960-value="-132"
+        data-field-left-res-960-value="-16"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 100.5px; top: -84px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6531-3161-4963-a130-333133376263/12x.png" alt=""
+            imgfield="tn_img_1728886447104"
+            src="https://optim.tildacdn.one/tild6531-3161-4963-a130-333133376263/-/resize/320x/-/format/webp/12x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886452542" data-elem-id="1728886452542"
+        data-elem-type="image" data-field-top-value="-83" data-field-left-value="400" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-320-value="-43" data-field-left-res-320-value="238" data-field-width-res-320-value="110"
+        data-field-top-res-480-value="-40" data-field-left-res-480-value="260" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="-50" data-field-left-res-640-value="280" data-field-width-res-640-value="120"
+        data-field-top-res-960-value="-131" data-field-left-res-960-value="384"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 500.5px; top: -83px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3832-6165-4934-b636-383239313332/22x.png" alt=""
+            imgfield="tn_img_1728886452542"
+            src="https://optim.tildacdn.one/tild3832-6165-4934-b636-383239313332/-/resize/320x/-/format/webp/22x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886456367" data-elem-id="1728886456367"
+        data-elem-type="image" data-field-top-value="-83" data-field-left-value="200" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-320-value="-43" data-field-left-res-320-value="120" data-field-width-res-320-value="110"
+        data-field-top-res-480-value="-40" data-field-left-res-480-value="130" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="-50" data-field-left-res-640-value="140" data-field-width-res-640-value="120"
+        data-field-top-res-960-value="-131" data-field-left-res-960-value="184"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 300.5px; top: -83px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3935-6531-4337-a237-383362613936/32x.png" alt=""
+            imgfield="tn_img_1728886456367"
+            src="https://optim.tildacdn.one/tild3935-6531-4337-a237-383362613936/-/resize/320x/-/format/webp/32x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886696985" data-elem-id="1728886696985" data-elem-type="text"
+        data-field-top-value="-79" data-field-left-value="41" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="-40" data-field-left-res-320-value="25" data-field-width-res-320-value="70"
+        data-field-top-res-480-value="-36" data-field-left-res-480-value="26" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="-47" data-field-left-res-640-value="30" data-field-width-res-640-value="70"
+        data-field-top-res-960-value="-127" data-field-left-res-960-value="25"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -79px; left: 141.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886696985" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886487983" data-elem-id="1728886487983"
+        data-elem-type="shape" data-field-top-value="-84" data-field-left-value="0" data-field-height-value="34"
+        data-field-width-value="200" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-top-res-320-value="-47"
+        data-field-left-res-320-value="0" data-field-width-res-320-value="73" data-field-top-res-480-value="-45"
+        data-field-left-res-480-value="0" data-field-width-res-480-value="81" data-field-top-res-640-value="-57"
+        data-field-left-res-640-value="0" data-field-width-res-640-value="100" data-field-top-res-960-value="-132"
+        data-field-left-res-960-value="-16"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 200px; left: 100.5px; top: -84px; height: 34px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886587703" data-elem-id="1728886587703"
+        data-elem-type="image" data-field-top-value="-83" data-field-left-value="600" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-480-value="-40" data-field-left-res-480-value="376" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="-50" data-field-left-res-640-value="420" data-field-width-res-640-value="120"
+        data-field-top-res-960-value="-131" data-field-left-res-960-value="584"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 700.5px; top: -83px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6531-3161-4963-a130-333133376263/12x.png" alt=""
+            imgfield="tn_img_1728886587703"
+            src="https://optim.tildacdn.one/tild6531-3161-4963-a130-333133376263/-/resize/320x/-/format/webp/12x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886587712" data-elem-id="1728886587712"
+        data-elem-type="image" data-field-top-value="-82" data-field-left-value="1000" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-480-value="23" data-field-left-res-480-value="699" data-field-top-res-960-value="-130"
+        data-field-left-res-960-value="984"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 1100.5px; top: -82px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3832-6165-4934-b636-383239313332/22x.png" alt=""
+            imgfield="tn_img_1728886587712"
+            src="https://optim.tildacdn.one/tild3832-6165-4934-b636-383239313332/-/resize/320x/-/format/webp/22x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886587720" data-elem-id="1728886587720"
+        data-elem-type="image" data-field-top-value="-82" data-field-left-value="800" data-field-width-value="160"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="322" data-field-fileheight-value="68"
+        data-field-top-res-640-value="-49" data-field-left-res-640-value="560" data-field-width-res-640-value="120"
+        data-field-top-res-960-value="-130" data-field-left-res-960-value="784"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 900.5px; top: -82px; width: 160px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3935-6531-4337-a237-383362613936/32x.png" alt=""
+            imgfield="tn_img_1728886587720"
+            src="https://optim.tildacdn.one/tild3935-6531-4337-a237-383362613936/-/resize/320x/-/format/webp/32x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886685179" data-elem-id="1728886685179" data-elem-type="text"
+        data-field-top-value="-78" data-field-left-value="1036" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-480-value="27" data-field-left-res-480-value="735" data-field-top-res-960-value="-126"
+        data-field-left-res-960-value="1020"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -78px; left: 1136.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886685179" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886597800" data-elem-id="1728886597800"
+        data-elem-type="shape" data-field-top-value="-82" data-field-left-value="1000" data-field-height-value="34"
+        data-field-width-value="200" data-field-axisy-value="top" data-field-axisx-value="left"
+        data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px"
+        data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-top-res-480-value="-46"
+        data-field-left-res-480-value="399" data-field-width-res-480-value="81" data-field-top-res-640-value="-54"
+        data-field-left-res-640-value="540" data-field-width-res-640-value="100" data-field-top-res-960-value="-130"
+        data-field-left-res-960-value="984"
+        data-fields="width,height,top,left,container,axisx,axisy,widthunits,heightunits,leftunits,topunits"
+        style="width: 200px; left: 1100.5px; top: -82px; height: 34px;">
+        <div class="tn-atom"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886624322" data-elem-id="1728886624322" data-elem-type="text"
+        data-field-top-value="-79" data-field-left-value="240" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="-40" data-field-left-res-320-value="145" data-field-width-res-320-value="70"
+        data-field-top-res-480-value="-36" data-field-left-res-480-value="156" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="-47" data-field-left-res-640-value="170" data-field-width-res-640-value="70"
+        data-field-top-res-960-value="-127" data-field-left-res-960-value="224"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -79px; left: 340.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886624322" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886651445" data-elem-id="1728886651445" data-elem-type="text"
+        data-field-top-value="-79" data-field-left-value="440" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="-40" data-field-left-res-320-value="263" data-field-width-res-320-value="70"
+        data-field-top-res-480-value="-36" data-field-left-res-480-value="286" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="-47" data-field-left-res-640-value="310" data-field-width-res-640-value="70"
+        data-field-top-res-960-value="-127" data-field-left-res-960-value="424"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -79px; left: 540.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886651445" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886662312" data-elem-id="1728886662312" data-elem-type="text"
+        data-field-top-value="-79" data-field-left-value="640" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-480-value="-36" data-field-left-res-480-value="402" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="-47" data-field-left-res-640-value="450" data-field-width-res-640-value="70"
+        data-field-top-res-960-value="-127" data-field-left-res-960-value="624"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -79px; left: 740.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886662312" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728886666445" data-elem-id="1728886666445" data-elem-type="text"
+        data-field-top-value="-78" data-field-left-value="840" data-field-width-value="94" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-640-value="-46" data-field-left-res-640-value="590" data-field-width-res-640-value="70"
+        data-field-top-res-960-value="-126" data-field-left-res-960-value="824"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: -78px; left: 940.5px; width: 94px;">
+        <div class="tn-atom" field="tn_text_1728886666445" style="line-height: 25px;">张XX 已报名</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957255303" data-elem-id="1728957255303" data-elem-type="text"
+        data-field-top-value="236" data-field-left-value="495" data-field-width-value="210" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="286" data-field-left-res-320-value="75" data-field-width-res-320-value="70"
+        data-field-top-res-480-value="111" data-field-left-res-480-value="205" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="128" data-field-left-res-640-value="290" data-field-width-res-640-value="60"
+        data-field-top-res-960-value="225" data-field-left-res-960-value="375"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 236px; left: 595.5px; width: 210px;">
+        <div class="tn-atom" field="tn_text_1728957255303" style="line-height: 30px;">第二赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957421344" data-elem-id="1728957421344"
+        data-elem-type="image" data-field-top-value="165" data-field-left-value="0" data-field-width-value="1092"
+        data-field-axisy-value="top" data-field-axisx-value="center" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2184" data-field-fileheight-value="68"
+        data-field-top-res-320-value="368" data-field-left-res-320-value="400" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="78" data-field-left-res-480-value="0" data-field-width-res-480-value="460"
+        data-field-top-res-640-value="82" data-field-width-res-640-value="600" data-field-top-res-960-value="159"
+        data-field-width-res-960-value="900"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 154.5px; top: 165px; width: 1092px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6666-3534-4263-b666-346465336330/12x.png" alt=""
+            imgfield="tn_img_1728957421344"
+            src="https://optim.tildacdn.one/tild6666-3534-4263-b666-346465336330/-/format/webp/12x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957436162" data-elem-id="1728957436162"
+        data-elem-type="image" data-field-top-value="876" data-field-left-value="57" data-field-width-value="1092"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2184" data-field-fileheight-value="68"
+        data-field-top-res-320-value="453" data-field-left-res-320-value="410" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="454" data-field-left-res-480-value="10" data-field-width-res-480-value="460"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 157.5px; top: 876px; width: 1092px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild3432-6631-4631-a161-383638323834/22x.png" alt=""
+            imgfield="tn_img_1728957436162"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957439556" data-elem-id="1728957439556"
+        data-elem-type="image" data-field-top-value="806" data-field-left-value="47" data-field-width-value="1092"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2184" data-field-fileheight-value="68"
+        data-field-top-res-320-value="406" data-field-left-res-320-value="410" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="494" data-field-left-res-480-value="10" data-field-width-res-480-value="460"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 147.5px; top: 806px; width: 1092px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild3262-3431-4332-a537-613833623661/32x.png" alt=""
+            imgfield="tn_img_1728957439556"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957588711" data-elem-id="1728957588711"
+        data-elem-type="image" data-field-top-value="706" data-field-left-value="492" data-field-width-value="88"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="188" data-field-fileheight-value="180"
+        data-field-top-res-320-value="179" data-field-left-res-320-value="361" data-field-width-res-320-value="68"
+        data-field-top-res-480-value="357" data-field-left-res-480-value="129" data-field-width-res-480-value="38"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 592.5px; top: 706px; width: 88px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild3638-3639-4666-a330-356337363866/jieshu2x.png" alt=""
+            imgfield="tn_img_1728957588711"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957581801" data-elem-id="1728957581801"
+        data-elem-type="image" data-field-top-value="304" data-field-left-value="426" data-field-width-value="348"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="696" data-field-fileheight-value="472"
+        data-field-top-res-320-value="266" data-field-left-res-320-value="47" data-field-width-res-320-value="250"
+        data-field-top-res-480-value="143" data-field-left-res-480-value="166" data-field-width-res-480-value="147"
+        data-field-top-res-640-value="157" data-field-left-res-640-value="224" data-field-width-res-640-value="192"
+        data-field-top-res-960-value="282" data-field-left-res-960-value="337" data-field-width-res-960-value="286"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 526.5px; top: 304px; width: 348px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6666-3065-4261-b039-646566393965/12x.png" alt=""
+            imgfield="tn_img_1728957581801"
+            src="https://optim.tildacdn.one/tild6666-3065-4261-b039-646566393965/-/resize/696x/-/format/webp/12x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970705" data-elem-id="1728957970705"
+        data-elem-type="image" data-field-top-value="352" data-field-left-value="478" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="325" data-field-left-res-320-value="75" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="161" data-field-left-res-480-value="180" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="181" data-field-left-res-640-value="240" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="316" data-field-left-res-960-value="361" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 578.5px; top: 352px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957970705"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957169013" data-elem-id="1728957169013" data-elem-type="text"
+        data-field-top-value="236" data-field-left-value="179" data-field-width-value="140" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="102" data-field-left-res-320-value="95" data-field-width-res-320-value="80"
+        data-field-top-res-480-value="111" data-field-left-res-480-value="60" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="128" data-field-left-res-640-value="101" data-field-width-res-640-value="60"
+        data-field-top-res-960-value="225" data-field-left-res-960-value="134" data-field-width-res-960-value="120"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 236px; left: 279.5px; width: 140px;">
+        <div class="tn-atom" field="tn_text_1728957169013" style="line-height: 30px;">第一赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957502163" data-elem-id="1728957502163"
+        data-elem-type="image" data-field-top-value="225" data-field-left-value="137" data-field-width-value="42"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="74" data-field-fileheight-value="92"
+        data-field-top-res-320-value="97" data-field-left-res-320-value="73" data-field-width-res-320-value="20"
+        data-field-top-res-480-value="101" data-field-left-res-480-value="38" data-field-width-res-480-value="24"
+        data-field-top-res-640-value="117" data-field-left-res-640-value="71" data-field-width-res-640-value="24"
+        data-field-top-res-960-value="214" data-field-left-res-960-value="92" data-field-width-res-960-value="38"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 237.5px; top: 225px; width: 42px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3866-3066-4933-b432-346365353463/2x.png" alt=""
+            imgfield="tn_img_1728957502163"
+            src="https://optim.tildacdn.one/tild3866-3066-4933-b432-346365353463/-/resize/84x/-/format/webp/2x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970702" data-elem-id="1728957970702" data-elem-type="text"
+        data-field-top-value="346" data-field-left-value="502" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="320" data-field-left-res-320-value="93" data-field-top-res-480-value="157"
+        data-field-left-res-480-value="191" data-field-width-res-480-value="90" data-field-top-res-640-value="177"
+        data-field-left-res-640-value="257" data-field-width-res-640-value="140" data-field-top-res-960-value="310"
+        data-field-left-res-960-value="382" data-field-width-res-960-value="90"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 346px; left: 602.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957970702" style="line-height: 28px;">报名日期：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970699" data-elem-id="1728957970699" data-elem-type="text"
+        data-field-top-value="380" data-field-left-value="502" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="344" data-field-left-res-320-value="93" data-field-width-res-320-value="170"
+        data-field-top-res-480-value="173" data-field-left-res-480-value="191" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="197" data-field-left-res-640-value="257" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="339" data-field-left-res-960-value="382" data-field-width-res-960-value="220"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 380px; left: 602.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957970699" style="line-height: 31px;">2024.11.18 - 2024.12.1</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970686" data-elem-id="1728957970686"
+        data-elem-type="image" data-field-top-value="442" data-field-left-value="478" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="381" data-field-left-res-320-value="75" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="201" data-field-left-res-480-value="180" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="235" data-field-left-res-640-value="240" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="394" data-field-left-res-960-value="361" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 578.5px; top: 442px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957970686"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957994325" data-elem-id="1728957994325" data-elem-type="text"
+        data-field-top-value="236" data-field-left-value="867" data-field-width-value="210" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="470" data-field-left-res-320-value="75" data-field-width-res-320-value="70"
+        data-field-top-res-480-value="111" data-field-left-res-480-value="362" data-field-width-res-480-value="70"
+        data-field-top-res-640-value="128" data-field-left-res-640-value="494" data-field-width-res-640-value="60"
+        data-field-top-res-960-value="225" data-field-left-res-960-value="682"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 236px; left: 967.5px; width: 210px;">
+        <div class="tn-atom" field="tn_text_1728957994325" style="line-height: 30px;">第三赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970683" data-elem-id="1728957970683" data-elem-type="text"
+        data-field-top-value="436" data-field-left-value="502" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="376" data-field-left-res-320-value="93" data-field-top-res-480-value="197"
+        data-field-left-res-480-value="191" data-field-width-res-480-value="90" data-field-top-res-640-value="231"
+        data-field-left-res-640-value="257" data-field-width-res-640-value="140" data-field-top-res-960-value="388"
+        data-field-left-res-960-value="382" data-field-width-res-960-value="90"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 436px; left: 602.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957970683" style="line-height: 28px;">比赛时间：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957970679" data-elem-id="1728957970679" data-elem-type="text"
+        data-field-top-value="470" data-field-left-value="502" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="400" data-field-left-res-320-value="93" data-field-width-res-320-value="170"
+        data-field-top-res-480-value="213" data-field-left-res-480-value="191" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="251" data-field-left-res-640-value="257" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="417" data-field-left-res-960-value="382" data-field-width-res-960-value="210"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 470px; left: 602.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957970679" style="line-height: 31px;">2024.12.2 - 2024.12.15</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728972155834" data-elem-id="1728972155834"
+        data-elem-type="image" data-field-top-value="-49" data-field-left-value="-476" data-field-width-value="17"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="68" data-field-fileheight-value="2152"
+        data-field-top-res-320-value="82" data-field-left-res-320-value="15" data-field-width-res-320-value="17"
+        data-field-left-res-480-value="-276"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: -375.5px; top: -49px; width: 17px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3963-6163-4136-a438-643532396564/2x.png" alt=""
+            imgfield="tn_img_1728972155834"
+            src="https://optim.tildacdn.one/tild3963-6163-4136-a438-643532396564/-/format/webp/2x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728972200661" data-elem-id="1728972200661"
+        data-elem-type="image" data-field-top-value="-49" data-field-left-value="-341" data-field-width-value="17"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="68" data-field-fileheight-value="2152"
+        data-field-top-res-320-value="5" data-field-left-res-320-value="-182" data-field-width-res-320-value="17"
+        data-field-left-res-480-value="-141"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: -240.5px; top: -49px; width: 17px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6232-3566-4665-a166-386639636663/_22x.png" alt=""
+            imgfield="tn_img_1728972200661"
+            src="https://optim.tildacdn.one/tild6232-3566-4665-a166-386639636663/-/format/webp/_22x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728972210590" data-elem-id="1728972210590"
+        data-elem-type="image" data-field-top-value="-49" data-field-left-value="-409" data-field-width-value="17"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="68" data-field-fileheight-value="2152"
+        data-field-top-res-320-value="5" data-field-left-res-320-value="-116" data-field-width-res-320-value="17"
+        data-field-left-res-480-value="-209"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: -308.5px; top: -49px; width: 17px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3430-3132-4139-b834-623463623136/2x.png" alt=""
+            imgfield="tn_img_1728972210590"
+            src="https://optim.tildacdn.one/tild3430-3132-4139-b834-623463623136/-/format/webp/2x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957568438" data-elem-id="1728957568438"
+        data-elem-type="image" data-field-top-value="303" data-field-left-value="54" data-field-width-value="348"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="696" data-field-fileheight-value="472"
+        data-field-top-res-320-value="82" data-field-left-res-320-value="47" data-field-width-res-320-value="250"
+        data-field-top-res-480-value="143" data-field-left-res-480-value="10" data-field-width-res-480-value="147"
+        data-field-top-res-640-value="158" data-field-left-res-640-value="20" data-field-width-res-640-value="192"
+        data-field-top-res-960-value="282" data-field-left-res-960-value="30" data-field-width-res-960-value="286"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 154.5px; top: 303px; width: 348px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6634-3430-4436-b834-666639663737/2x.png" alt=""
+            imgfield="tn_img_1728957568438"
+            src="https://optim.tildacdn.one/tild6634-3430-4436-b834-666639663737/-/resize/696x/-/format/webp/2x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957819696" data-elem-id="1728957819696"
+        data-elem-type="image" data-field-top-value="351" data-field-left-value="106" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="141" data-field-left-res-320-value="73" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="161" data-field-left-res-480-value="24" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="182" data-field-left-res-640-value="36" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="316" data-field-left-res-960-value="54" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 206.5px; top: 351px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957819696"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957840064" data-elem-id="1728957840064" data-elem-type="text"
+        data-field-top-value="345" data-field-left-value="130" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="136" data-field-left-res-320-value="91" data-field-width-res-320-value="85"
+        data-field-top-res-480-value="157" data-field-left-res-480-value="35" data-field-width-res-480-value="67"
+        data-field-top-res-640-value="178" data-field-left-res-640-value="53" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="310" data-field-left-res-960-value="75" data-field-width-res-960-value="220"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 345px; left: 230.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957840064" style="line-height: 28px;">报名日期：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957867090" data-elem-id="1728957867090" data-elem-type="text"
+        data-field-top-value="379" data-field-left-value="130" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="160" data-field-left-res-320-value="91" data-field-width-res-320-value="160"
+        data-field-top-res-480-value="173" data-field-left-res-480-value="35" data-field-width-res-480-value="114"
+        data-field-top-res-640-value="198" data-field-left-res-640-value="53" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="339" data-field-left-res-960-value="75" data-field-width-res-960-value="220"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 379px; left: 230.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957867090" style="line-height: 31px;">2024.10.21 - 2024.11.3</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957927726" data-elem-id="1728957927726"
+        data-elem-type="image" data-field-top-value="441" data-field-left-value="106" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="197" data-field-left-res-320-value="73" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="201" data-field-left-res-480-value="24" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="232" data-field-left-res-640-value="36" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="394" data-field-left-res-960-value="54" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 206.5px; top: 441px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957927726"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957927724" data-elem-id="1728957927724" data-elem-type="text"
+        data-field-top-value="435" data-field-left-value="130" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="192" data-field-left-res-320-value="91" data-field-width-res-320-value="85"
+        data-field-top-res-480-value="197" data-field-left-res-480-value="35" data-field-width-res-480-value="67"
+        data-field-top-res-640-value="228" data-field-left-res-640-value="53" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="388" data-field-left-res-960-value="75" data-field-width-res-960-value="230"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 435px; left: 230.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957927724" style="line-height: 28px;">比赛时间：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957927720" data-elem-id="1728957927720" data-elem-type="text"
+        data-field-top-value="469" data-field-left-value="130" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="216" data-field-left-res-320-value="91" data-field-width-res-320-value="170"
+        data-field-top-res-480-value="213" data-field-left-res-480-value="35" data-field-width-res-480-value="116"
+        data-field-top-res-640-value="248" data-field-left-res-640-value="53" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="417" data-field-left-res-960-value="75" data-field-width-res-960-value="230"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 469px; left: 230.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957927720" style="line-height: 31px;">2024.11.4 - 2024.11.17</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728899462924" data-elem-id="1728899462924"
+        data-elem-type="image" data-field-top-value="303" data-field-left-value="314" data-field-width-value="88"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="188" data-field-fileheight-value="180"
+        data-field-top-res-320-value="82" data-field-left-res-320-value="229" data-field-width-res-320-value="68"
+        data-field-top-res-480-value="142" data-field-left-res-480-value="118" data-field-width-res-480-value="38"
+        data-field-top-res-640-value="158" data-field-left-res-640-value="163" data-field-width-res-640-value="49"
+        data-field-top-res-960-value="282" data-field-left-res-960-value="244" data-field-width-res-960-value="72"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 414.5px; top: 303px; width: 88px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3731-6434-4435-a138-306163366131/_242x_1.png" alt=""
+            imgfield="tn_img_1728899462924"
+            src="https://optim.tildacdn.one/tild3731-6434-4435-a138-306163366131/-/resize/176x/-/format/webp/_242x_1.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957657120" data-elem-id="1728957657120"
+        data-elem-type="image" data-field-top-value="304" data-field-left-value="798" data-field-width-value="348"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="696" data-field-fileheight-value="472"
+        data-field-top-res-320-value="450" data-field-left-res-320-value="47" data-field-width-res-320-value="250"
+        data-field-top-res-480-value="143" data-field-left-res-480-value="323" data-field-width-res-480-value="147"
+        data-field-top-res-640-value="157" data-field-left-res-640-value="428" data-field-width-res-640-value="192"
+        data-field-top-res-960-value="282" data-field-left-res-960-value="644" data-field-width-res-960-value="286"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 898.5px; top: 304px; width: 348px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6666-3065-4261-b039-646566393965/12x.png" alt=""
+            imgfield="tn_img_1728957657120"
+            src="https://optim.tildacdn.one/tild6666-3065-4261-b039-646566393965/-/resize/696x/-/format/webp/12x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980919" data-elem-id="1728957980919"
+        data-elem-type="image" data-field-top-value="352" data-field-left-value="850" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="509" data-field-left-res-320-value="75" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="161" data-field-left-res-480-value="337" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="181" data-field-left-res-640-value="444" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="316" data-field-left-res-960-value="668" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 950.5px; top: 352px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957980919"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980917" data-elem-id="1728957980917" data-elem-type="text"
+        data-field-top-value="346" data-field-left-value="874" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="504" data-field-left-res-320-value="93" data-field-top-res-480-value="157"
+        data-field-left-res-480-value="348" data-field-width-res-480-value="90" data-field-top-res-640-value="177"
+        data-field-left-res-640-value="461" data-field-width-res-640-value="140" data-field-top-res-960-value="310"
+        data-field-left-res-960-value="689" data-field-width-res-960-value="90"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 346px; left: 974.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957980917" style="line-height: 28px;">报名日期：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980913" data-elem-id="1728957980913" data-elem-type="text"
+        data-field-top-value="380" data-field-left-value="874" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="528" data-field-left-res-320-value="93" data-field-width-res-320-value="160"
+        data-field-top-res-480-value="173" data-field-left-res-480-value="348" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="197" data-field-left-res-640-value="461" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="339" data-field-left-res-960-value="689" data-field-width-res-960-value="210"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 380px; left: 974.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957980913" style="line-height: 31px;">2024.12.16 - 2025.1.5</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980903" data-elem-id="1728957980903"
+        data-elem-type="image" data-field-top-value="442" data-field-left-value="850" data-field-width-value="16"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="32" data-field-fileheight-value="32"
+        data-field-top-res-320-value="565" data-field-left-res-320-value="75" data-field-width-res-320-value="12"
+        data-field-top-res-480-value="201" data-field-left-res-480-value="337" data-field-width-res-480-value="8"
+        data-field-top-res-640-value="231" data-field-left-res-640-value="444" data-field-width-res-640-value="11"
+        data-field-top-res-960-value="394" data-field-left-res-960-value="668" data-field-width-res-960-value="15"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 950.5px; top: 442px; width: 16px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3763-3766-4737-b636-336330393363/riqi_2x_1.png" alt=""
+            imgfield="tn_img_1728957980903"
+            src="https://optim.tildacdn.one/tild3763-3766-4737-b636-336330393363/-/format/webp/riqi_2x_1.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980900" data-elem-id="1728957980900" data-elem-type="text"
+        data-field-top-value="436" data-field-left-value="874" data-field-width-value="110" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="560" data-field-left-res-320-value="93" data-field-top-res-480-value="197"
+        data-field-left-res-480-value="348" data-field-width-res-480-value="80" data-field-top-res-640-value="227"
+        data-field-left-res-640-value="461" data-field-width-res-640-value="140" data-field-top-res-960-value="388"
+        data-field-left-res-960-value="689" data-field-width-res-960-value="90"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 436px; left: 974.5px; width: 110px;">
+        <div class="tn-atom" field="tn_text_1728957980900" style="line-height: 28px;">比赛时间：</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8115916711728957980897" data-elem-id="1728957980897" data-elem-type="text"
+        data-field-top-value="470" data-field-left-value="874" data-field-width-value="220" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="584" data-field-left-res-320-value="93" data-field-width-res-320-value="160"
+        data-field-top-res-480-value="213" data-field-left-res-480-value="348" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="247" data-field-left-res-640-value="461" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="417" data-field-left-res-960-value="689" data-field-width-res-960-value="200"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 470px; left: 974.5px; width: 220px;">
+        <div class="tn-atom" field="tn_text_1728957980897" style="line-height: 31px;">2025.1.6 - 2025.1.19</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>t_onFuncLoad('t396_initialScale', function () { t396_initialScale('811591671'); }); t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('811591671'); }); });</script>
