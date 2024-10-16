@@ -95,7 +95,6 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/sampleLeaderboardData.js"></script>
   <script>
     // install required dayjs plugins
     dayjs.extend(dayjs_plugin_utc)
@@ -1681,7 +1680,8 @@
             sort: "version:desc",
           }).then(response => {
             const leaderboards = strapiParse(response)
-            const sortedData = _.sortBy(sampleLeaderboardData, [(n) => (n?.rank || 0)]);
+            // console.log(leaderboards)
+            const sortedData = _.sortBy(leaderboards, [(n) => (n?.rank || 0)]);
             for (let i = 1; i < 11; i++) {
               const record = sortedData[i - 1];
               if (record) {
