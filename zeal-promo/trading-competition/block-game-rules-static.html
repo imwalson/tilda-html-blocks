@@ -1,0 +1,1855 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://ws.tildacdn.com">
+  <link rel="dns-prefetch" href="https://static.tildacdn.one">
+  <link rel="shortcut icon"
+    href="https://static.tildacdn.one/tild3563-3262-4833-b931-666466643964/android-chrome-192x1.ico"
+    type="image/x-icon">
+  <!-- Assets -->
+  <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async="" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-grid-3.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';">
+  <link rel="stylesheet"
+    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.css?t=1728916484" type="text/css"
+    media="all" onerror="this.loaderr='y';">
+  <link rel="stylesheet" type="text/css" href="/custom.css?t=1728916484">
+  <script nomodule="" src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function t_onReady(func) {
+      if (document.readyState != 'loading') {
+        func();
+      } else {
+        document.addEventListener('DOMContentLoaded', func);
+      }
+    }
+
+    function t_onFuncLoad(funcName, okFunc, time) {
+      if (typeof window[funcName] === 'function') {
+        okFunc();
+      } else {
+        setTimeout(function () {
+          t_onFuncLoad(funcName, okFunc, time);
+        }, (time || 100));
+      }
+    }
+
+    function t396_scaleInitial__getElementsToScale(t) {
+      return t ? Array.prototype.slice.call(t.children).filter(function (t) {
+        return t && (t.classList.contains("t396__elem") || t.classList.contains("t396__group"))
+      }) : []
+    }
+
+    function t396_getFieldValue(t, e, r, a) {
+      var i = a[a.length - 1],
+        l = r === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + r);
+      if (!l)
+        for (var n = 0; n < a.length; n++) {
+          var o = a[n];
+          if (!(o <= r) && (l = o === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + o))) break
+        }
+      return l
+    }
+  </script>
+  <script src="https://static.tildacdn.one/js/jquery-1.10.2.min.js" charset="utf-8"
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-scripts-3.0.min.js" charset="utf-8" defer=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.js?t=1728916484"
+    charset="utf-8" async="" onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-lazyload-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-1.1.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-events-1.0.min.js" charset="utf-8" async=""
+    onerror="this.loaderr='y';"></script>
+</head>
+
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+<script src="https://unpkg.com/dayjs@1.8.9/dayjs.min.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/utc.js"></script>
+<script src="https://unpkg.com/dayjs@1.8.9/plugin/isSameOrAfter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+
+<script>
+  // install required dayjs plugins
+  dayjs.extend(dayjs_plugin_utc)
+  dayjs.extend(dayjs_plugin_isSameOrAfter)
+  const now = dayjs()
+
+  const timeMaps = {
+    step1_entry: [dayjs.utc('2024-10-21T00:00:00.000Z'), dayjs.utc('2024-11-04T00:00:00.000Z')],
+    step1_match: [dayjs.utc('2024-11-04T00:00:00.000Z'), dayjs.utc('2024-11-18T00:00:00.000Z')],
+    step2_entry: [dayjs.utc('2024-11-18T00:00:00.000Z'), dayjs.utc('2024-12-02T00:00:00.000Z')],
+    step2_match: [dayjs.utc('2024-12-02T00:00:00.000Z'), dayjs.utc('2024-12-16T00:00:00.000Z')],
+    step3_entry: [dayjs.utc('2024-12-16T00:00:00.000Z'), dayjs.utc('2025-01-06T00:00:00.000Z')],
+    step3_match: [dayjs.utc('2025-01-06T00:00:00.000Z'), dayjs.utc('2025-01-19T00:00:00.000Z')],
+  }
+
+  function getCurrentStep() {
+    if (now.isBefore(timeMaps['step1_match'][0])) {
+      return 'step1_entry'
+    } else if (now.isSameOrAfter(timeMaps['step1_match'][0]) && now.isBefore(timeMaps['step1_match'][1])) {
+      return 'step1_match'
+    } else if (now.isSameOrAfter(timeMaps['step2_entry'][0]) && now.isBefore(timeMaps['step2_entry'][1])) {
+      return 'step2_entry'
+    } else if (now.isSameOrAfter(timeMaps['step2_match'][0]) && now.isBefore(timeMaps['step2_match'][1])) {
+      return 'step2_match'
+    } else if (now.isSameOrAfter(timeMaps['step3_entry'][0]) && now.isBefore(timeMaps['step3_entry'][1])) {
+      return 'step3_entry'
+    } else if (now.isSameOrAfter(timeMaps['step3_match'][0]) && now.isBefore(timeMaps['step3_match'][1])) {
+      return 'step3_match'
+    } else if (now.isAfter(timeMaps['step3_match'][1])) {
+      return 'ended'
+    }
+    return 'step1_entry';
+  }
+</script>
+
+<style>
+  .active-tab-text {
+    color: #143792 !important;
+  }
+
+  .inactive-tab-text {
+    color: #ffffff !important;
+  }
+
+  .active-tab-subtext {
+    color: #143792 !important;
+  }
+
+  .inactive-tab-subtext {
+    color: #f2f5ff !important;
+  }
+</style>
+
+<div id="rec812826522" class="r t-rec" style=" " data-animationappear="off" data-record-type="396">
+  <style>
+    #rec812826522 .t396__artboard {
+      height: 800px;
+      background-color: #153792;
+    }
+
+    #rec812826522 .t396__filter {
+      height: 800px;
+    }
+
+    #rec812826522 .t396__carrier {
+      height: 800px;
+      background-position: center center;
+      background-attachment: scroll;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width:1199px) {
+
+      #rec812826522 .t396__artboard,
+      #rec812826522 .t396__filter,
+      #rec812826522 .t396__carrier {
+        height: 750px;
+      }
+
+      #rec812826522 .t396__filter {}
+
+      #rec812826522 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+
+      #rec812826522 .t396__artboard,
+      #rec812826522 .t396__filter,
+      #rec812826522 .t396__carrier {
+        height: 450px;
+      }
+
+      #rec812826522 .t396__filter {}
+
+      #rec812826522 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+
+      #rec812826522 .t396__artboard,
+      #rec812826522 .t396__filter,
+      #rec812826522 .t396__carrier {
+        height: 420px;
+      }
+
+      #rec812826522 .t396__filter {}
+
+      #rec812826522 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+
+      #rec812826522 .t396__artboard,
+      #rec812826522 .t396__filter,
+      #rec812826522 .t396__carrier {
+        height: 820px;
+      }
+
+      #rec812826522 .t396__filter {}
+
+      #rec812826522 .t396__carrier {
+        background-attachment: scroll;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895054728"] {
+      z-index: 2;
+      top: 40px;
+      left: calc(50% - 600px + 240px);
+      width: 720px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895054728"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895054728"] {
+        top: 20px;
+        left: calc(50% - 480px + 120px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895054728"] {
+        top: 20px;
+        left: calc(50% - 320px + 120px);
+        width: 400px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895054728"] {
+        top: 20px;
+        left: calc(50% - 240px + 55px);
+        width: 370px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895054728"] {
+        top: 20px;
+        left: calc(50% - 160px + -15px);
+        width: 350px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895105470"] {
+      z-index: 3;
+      top: 353px;
+      left: calc(50% - 600px + 634px);
+      width: 512px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895105470"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895105470"] {
+        top: 299px;
+        left: calc(50% - 480px + 456px);
+        width: 475px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895105470"] {
+        top: 182px;
+        left: calc(50% - 320px + 310px);
+        width: 310px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895105470"] {
+        top: 201px;
+        left: calc(50% - 240px + 270px);
+        width: 198px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895105470"] {
+        top: 503px;
+        left: calc(50% - 160px + 10px);
+        width: 300px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895140967"] {
+      z-index: 4;
+      top: 181px;
+      left: calc(50% - 600px + 148px);
+      width: 248px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895140967"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895140967"] {
+        top: 151px;
+        left: calc(50% - 480px + 30px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895140967"] {
+        top: 97px;
+        left: calc(50% - 320px + 80px);
+        width: 140px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895140967"] {
+        top: 93px;
+        left: calc(50% - 240px + 10px);
+        width: 146px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895140967"] {
+        top: 94px;
+        left: calc(50% - 160px + 0px);
+        width: 104px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895144543"] {
+      z-index: 5;
+      top: 181px;
+      left: calc(50% - 600px + 476px);
+      width: 248px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895144543"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895144543"] {
+        top: 151px;
+        left: calc(50% - 480px + 356px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895144543"] {
+        top: 97px;
+        left: calc(50% - 320px + 250px);
+        width: 140px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895144543"] {
+        top: 92px;
+        left: calc(50% - 240px + 166px);
+        width: 146px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895144543"] {
+        top: 94px;
+        left: calc(50% - 160px + 108px);
+        width: 104px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895199134"] {
+      z-index: 6;
+      top: 305px;
+      left: calc(50% - 600px + 54px);
+      width: 493px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895199134"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895199134"] {
+        top: 270px;
+        left: calc(50% - 480px + 20px);
+        width: 406px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895199134"] {
+        top: 166px;
+        left: calc(50% - 320px + 20px);
+        width: 265px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895199134"] {
+        top: 155px;
+        left: calc(50% - 240px + 10px);
+        width: 239px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895199134"] {
+        top: 147px;
+        left: calc(50% - 160px + 10px);
+        width: 300px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895221318"] {
+      color: #ffffff;
+      z-index: 7;
+      top: 305px;
+      left: calc(50% - 600px + 634px);
+      width: 560px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895221318"] .tn-atom {
+      color: #ffffff;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] {
+        top: 255px;
+        left: calc(50% - 480px + 456px);
+        width: 490px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] {
+        top: 156px;
+        left: calc(50% - 320px + 310px);
+        width: 270px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] {
+        top: 154px;
+        left: calc(50% - 240px + 270px);
+        width: 198px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] {
+        top: 453px;
+        left: calc(50% - 160px + 10px);
+        width: 300px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895221318"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895257956"] {
+      color: #ffffff;
+      z-index: 8;
+      top: 675px;
+      left: calc(50% - 600px + 634px);
+      width: 560px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895257956"] .tn-atom {
+      color: #ffffff;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] {
+        top: 595px;
+        left: calc(50% - 480px + 456px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] {
+        top: 375px;
+        left: calc(50% - 320px + 310px);
+        width: 210px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] {
+        top: 333px;
+        left: calc(50% - 240px + 269px);
+        width: 190px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] {
+        top: 690px;
+        left: calc(50% - 160px + 10px);
+        width: 260px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895257956"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895268055"] {
+      color: transparent;
+      background-image: linear-gradient(0.25turn, rgba(255, 252, 236, 1) 0%, rgba(255, 201, 139, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      z-index: 9;
+      top: 707px;
+      left: calc(50% - 600px + 634px);
+      width: 560px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895268055"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.25turn, rgba(255, 252, 236, 1) 0%, rgba(255, 201, 139, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] {
+        top: 627px;
+        left: calc(50% - 480px + 456px);
+        width: 491px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] {
+        top: 393px;
+        left: calc(50% - 320px + 310px);
+        width: 340px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] {
+        top: 353px;
+        left: calc(50% - 240px + 269px);
+        width: 200px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] {
+        top: 712px;
+        left: calc(50% - 160px + 10px);
+        width: 302px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895268055"] .tn-atom {
+        font-size: 13px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895357245"] {
+      color: #ffffff;
+      z-index: 10;
+      top: 660px;
+      left: calc(50% - 600px + 54px);
+      width: 560px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895357245"] .tn-atom {
+      color: #ffffff;
+      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] {
+        top: 551px;
+        left: calc(50% - 480px + 30px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] {
+        top: 351px;
+        left: calc(50% - 320px + 18px);
+        width: 110px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] {
+        top: 333px;
+        left: calc(50% - 240px + 10px);
+        width: 100px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] {
+        top: 344px;
+        left: calc(50% - 160px + 10px);
+        width: 170px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895357245"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895589699"] {
+      color: transparent;
+      background-image: linear-gradient(0.25turn, rgba(255, 252, 236, 1) 0%, rgba(255, 201, 139, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      z-index: 11;
+      top: 655px;
+      left: calc(50% - 600px + 215px);
+      width: 273px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895589699"] .tn-atom {
+      color: transparent;
+      background-image: linear-gradient(0.25turn, rgba(255, 252, 236, 1) 0%, rgba(255, 201, 139, 1) 100%);
+      -webkit-background-clip: text;
+      will-change: transform;
+      font-size: 24px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] {
+        top: 581px;
+        left: calc(50% - 480px + 30px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] {
+        top: 351px;
+        left: calc(50% - 320px + 125px);
+        width: 110px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] {
+        top: 333px;
+        left: calc(50% - 240px + 98px);
+        width: 110px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] {
+        top: 369px;
+        left: calc(50% - 160px + 10px);
+        width: 160px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895589699"] .tn-atom {
+        font-size: 15px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895634758"] {
+      color: #dcebff;
+      z-index: 12;
+      top: 694px;
+      left: calc(50% - 600px + 54px);
+      width: 560px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728895634758"] .tn-atom {
+      color: #dcebff;
+      font-size: 12px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      opacity: 0.7;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] {
+        top: 620px;
+        left: calc(50% - 480px + 30px);
+        width: 328px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] {
+        top: 373px;
+        left: calc(50% - 320px + 18px);
+        width: 270px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] .tn-atom {
+        font-size: 8px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] {
+        top: 349px;
+        left: calc(50% - 240px + 10px);
+        width: 219px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] .tn-atom {
+        font-size: 8px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] {
+        top: 395px;
+        left: calc(50% - 160px + 10px);
+        width: 270px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728895634758"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956834809"] {
+      color: #143792;
+      text-align: center;
+      z-index: 13;
+      top: 194px;
+      left: calc(50% - 600px + 222px);
+      width: 100px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956834809"] .tn-atom {
+      color: #143792;
+      font-size: 20px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] {
+        top: 164px;
+        left: calc(50% - 480px + 104px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] {
+        top: 103px;
+        left: calc(50% - 320px + 115px);
+        width: 69px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] {
+        top: 98px;
+        left: calc(50% - 240px + 53px);
+        width: 59px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] {
+        top: 100px;
+        left: calc(50% - 160px + 22px);
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956834809"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956865105"] {
+      color: #143792;
+      text-align: center;
+      z-index: 14;
+      top: 222px;
+      left: calc(50% - 600px + 187px);
+      width: 170px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956865105"] .tn-atom {
+      color: #143792;
+      font-size: 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      opacity: 0.5;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] {
+        top: 192px;
+        left: calc(50% - 480px + 69px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] {
+        top: 122px;
+        left: calc(50% - 320px + 91px);
+        width: 117px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] {
+        top: 116px;
+        left: calc(50% - 240px + 18px);
+        width: 130px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] .tn-atom {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] {
+        top: 112px;
+        left: calc(50% - 160px + 2px);
+        width: 100px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956865105"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956973875"] {
+      color: #ffffff;
+      text-align: center;
+      z-index: 15;
+      top: 194px;
+      left: calc(50% - 600px + 540px);
+      width: 120px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956973875"] .tn-atom {
+      color: #ffffff;
+      font-size: 20px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] {
+        top: 164px;
+        left: calc(50% - 480px + 420px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] {
+        top: 103px;
+        left: calc(50% - 320px + 279px);
+        width: 82px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] {
+        top: 98px;
+        left: calc(50% - 240px + 203px);
+        width: 71px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] {
+        top: 100px;
+        left: calc(50% - 160px + 140px);
+        width: 40px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973875"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956973878"] {
+      color: #f2f5ff;
+      text-align: center;
+      z-index: 16;
+      top: 222px;
+      left: calc(50% - 600px + 500px);
+      width: 200px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728956973878"] .tn-atom {
+      color: #f2f5ff;
+      font-size: 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      opacity: 0.5;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] {
+        top: 192px;
+        left: calc(50% - 480px + 380px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] {
+        top: 122px;
+        left: calc(50% - 320px + 251px);
+        width: 137px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] {
+        top: 116px;
+        left: calc(50% - 240px + 179px);
+        width: 120px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] .tn-atom {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] {
+        top: 112px;
+        left: calc(50% - 160px + 110px);
+        width: 100px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728956973878"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957063092"] {
+      z-index: 17;
+      top: 180px;
+      left: calc(50% - 600px + 804px);
+      width: 248px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957063092"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957063092"] {
+        top: 150px;
+        left: calc(50% - 480px + 682px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957063092"] {
+        top: 96px;
+        left: calc(50% - 320px + 420px);
+        width: 140px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957063092"] {
+        top: 92px;
+        left: calc(50% - 240px + 322px);
+        width: 146px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957063092"] {
+        top: 94px;
+        left: calc(50% - 160px + 216px);
+        width: 104px;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957065726"] {
+      color: #ffffff;
+      text-align: center;
+      z-index: 18;
+      top: 193px;
+      left: calc(50% - 600px + 868px);
+      width: 120px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957065726"] .tn-atom {
+      color: #ffffff;
+      font-size: 20px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 700;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] {
+        top: 163px;
+        left: calc(50% - 480px + 746px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] {
+        top: 102px;
+        left: calc(50% - 320px + 449px);
+        width: 82px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] .tn-atom {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] {
+        top: 98px;
+        left: calc(50% - 240px + 359px);
+        width: 71px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] {
+        top: 100px;
+        left: calc(50% - 160px + 248px);
+        width: 40px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065726"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957065730"] {
+      color: #f2f5ff;
+      text-align: center;
+      z-index: 19;
+      top: 221px;
+      left: calc(50% - 600px + 828px);
+      width: 200px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728957065730"] .tn-atom {
+      color: #f2f5ff;
+      font-size: 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      opacity: 0.5;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] {
+        top: 191px;
+        left: calc(50% - 480px + 706px);
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] {
+        top: 121px;
+        left: calc(50% - 320px + 421px);
+        width: 137px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] {
+        top: 116px;
+        left: calc(50% - 240px + 336px);
+        width: 117px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] .tn-atom {
+        font-size: 11px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] {
+        top: 112px;
+        left: calc(50% - 160px + 218px);
+        width: 100px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1728957065730"] .tn-atom {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728958173204"] {
+      z-index: 20;
+      top: 930px;
+      left: calc(50% - 600px + -173px);
+      width: 493px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728958173204"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec812826522 .tn-elem[data-elem-id="1728958178531"] {
+      z-index: 21;
+      top: 1300px;
+      left: calc(50% - 600px + -173px);
+      width: 493px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728958178531"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec812826522 .tn-elem[data-elem-id="1728958196513"] {
+      z-index: 22;
+      top: 930px;
+      left: calc(50% - 600px + 420px);
+      width: 544px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728958196513"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec812826522 .tn-elem[data-elem-id="1728958278898"] {
+      z-index: 23;
+      top: 1280px;
+      left: calc(50% - 600px + 420px);
+      width: 544px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1728958278898"] .tn-atom {
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {}
+
+    @media screen and (max-width:959px) {}
+
+    @media screen and (max-width:639px) {}
+
+    @media screen and (max-width:479px) {}
+
+    #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+      color: #dcebff;
+      text-align: center;
+      z-index: 24;
+      top: 755px;
+      left: calc(50% - 600px + 255px);
+      width: 690px;
+    }
+
+    #rec812826522 .tn-elem[data-elem-id="1729170780398"] .tn-atom {
+      color: #dcebff;
+      font-size: 14px;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      opacity: 0.8;
+      background-position: center center;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    @media screen and (max-width:1199px) {
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+        top: 700px;
+        left: calc(50% - 480px + 200px);
+        width: 560px;
+      }
+    }
+
+    @media screen and (max-width:959px) {
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+        top: 421px;
+        left: calc(50% - 320px + 140px);
+        width: 360px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] .tn-atom {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width:639px) {
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+        top: 395px;
+        left: calc(50% - 240px + 60px);
+        width: 360px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] .tn-atom {
+        font-size: 9px;
+      }
+    }
+
+    @media screen and (max-width:479px) {
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+        top: 759px;
+        left: calc(50% - 160px + 10px);
+        width: 300px;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] {
+        text-align: left;
+      }
+
+      #rec812826522 .tn-elem[data-elem-id="1729170780398"] .tn-atom {
+        font-size: 12px;
+      }
+    }
+  </style>
+  <div class="t396">
+    <div class="t396__artboard rendered" data-artboard-recid="812826522" data-artboard-screens="320,480,640,960,1200"
+      data-artboard-height="800" data-artboard-valign="center" data-artboard-upscale="grid"
+      data-artboard-height-res-320="820" data-artboard-upscale-res-320="window" data-artboard-height-res-480="420"
+      data-artboard-upscale-res-480="window" data-artboard-height-res-640="450" data-artboard-upscale-res-640="window"
+      data-artboard-height-res-960="750" data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="800"
+      data-artboard-proxy-max-height="800">
+      <div class="t396__carrier" data-artboard-recid="812826522"></div>
+      <div class="t396__filter" data-artboard-recid="812826522"></div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895054728" data-elem-id="1728895054728"
+        data-elem-type="image" data-field-top-value="40" data-field-left-value="240" data-field-width-value="720"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2008" data-field-fileheight-value="308"
+        data-field-top-res-320-value="20" data-field-left-res-320-value="-15" data-field-width-res-320-value="350"
+        data-field-top-res-480-value="20" data-field-left-res-480-value="55" data-field-width-res-480-value="370"
+        data-field-top-res-640-value="20" data-field-left-res-640-value="120" data-field-width-res-640-value="400"
+        data-field-top-res-960-value="20" data-field-left-res-960-value="120"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 365px; top: 40px; width: 720px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3561-3536-4133-a564-613238343331/42x.png" alt=""
+            imgfield="tn_img_1728895054728"
+            src="https://optim.tildacdn.one/tild3561-3536-4133-a564-613238343331/-/format/webp/42x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895105470" data-elem-id="1728895105470"
+        data-elem-type="image" data-field-top-value="353" data-field-left-value="634" data-field-width-value="512"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2176" data-field-fileheight-value="1284"
+        data-field-top-res-320-value="503" data-field-left-res-320-value="10" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="201" data-field-left-res-480-value="270" data-field-width-res-480-value="198"
+        data-field-top-res-640-value="182" data-field-left-res-640-value="310" data-field-width-res-640-value="310"
+        data-field-top-res-960-value="299" data-field-left-res-960-value="456" data-field-width-res-960-value="475"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 759px; top: 353px; width: 512px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild3034-6363-4666-b938-313034656363/22x.png" alt=""
+            imgfield="tn_img_1728895105470"
+            src="https://optim.tildacdn.one/tild3034-6363-4666-b938-313034656363/-/format/webp/22x.png"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895140967" data-elem-id="1728895140967"
+        data-elem-type="image" data-field-top-value="181" data-field-left-value="148" data-field-width-value="248"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="496" data-field-fileheight-value="170"
+        data-field-top-res-320-value="94" data-field-left-res-320-value="0" data-field-width-res-320-value="104"
+        data-field-top-res-480-value="93" data-field-left-res-480-value="10" data-field-width-res-480-value="146"
+        data-field-top-res-640-value="97" data-field-left-res-640-value="80" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="151" data-field-left-res-960-value="30"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 273px; top: 181px; width: 248px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6139-3637-4838-b534-393463653434/_72x.png" alt=""
+            imgfield="tn_img_1728895140967"
+            src="https://optim.tildacdn.one/tild6139-3637-4838-b534-393463653434/-/resize/496x/-/format/webp/_72x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895144543" data-elem-id="1728895144543"
+        data-elem-type="image" data-field-top-value="181" data-field-left-value="476" data-field-width-value="248"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="496" data-field-fileheight-value="156"
+        data-field-top-res-320-value="94" data-field-left-res-320-value="108" data-field-width-res-320-value="104"
+        data-field-top-res-480-value="92" data-field-left-res-480-value="166" data-field-width-res-480-value="146"
+        data-field-top-res-640-value="97" data-field-left-res-640-value="250" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="151" data-field-left-res-960-value="356"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 601px; top: 181px; width: 248px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6661-6233-4737-b733-656136666536/_72x.png" alt=""
+            imgfield="tn_img_1728895144543"
+            src="https://optim.tildacdn.one/tild6661-6233-4737-b733-656136666536/-/resize/496x/-/format/webp/_72x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895199134" data-elem-id="1728895199134"
+        data-elem-type="image" data-field-top-value="305" data-field-left-value="54" data-field-width-value="493"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="986" data-field-fileheight-value="646"
+        data-field-top-res-320-value="147" data-field-left-res-320-value="10" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="155" data-field-left-res-480-value="10" data-field-width-res-480-value="239"
+        data-field-top-res-640-value="166" data-field-left-res-640-value="20" data-field-width-res-640-value="265"
+        data-field-top-res-960-value="270" data-field-left-res-960-value="20" data-field-width-res-960-value="406"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 179px; top: 305px; width: 493px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6461-3166-4462-b834-386664653833/2x_1.png" alt=""
+            imgfield="tn_img_1728895199134"
+            src="https://optim.tildacdn.one/tild6461-3166-4462-b834-386664653833/-/resize/986x/-/format/webp/2x_1.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895221318" data-elem-id="1728895221318" data-elem-type="text"
+        data-field-top-value="305" data-field-left-value="634" data-field-width-value="560" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="453" data-field-left-res-320-value="10" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="154" data-field-left-res-480-value="270" data-field-width-res-480-value="198"
+        data-field-top-res-640-value="156" data-field-left-res-640-value="310" data-field-width-res-640-value="270"
+        data-field-top-res-960-value="255" data-field-left-res-960-value="456" data-field-width-res-960-value="490"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 305px; left: 759px; width: 560px;">
+        <div class="tn-atom" field="tn_text_1728895221318" style="line-height: 28px;">总参赛账户数量为1,000个，而A客户的参赛账户成绩如下﹕
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895257956" data-elem-id="1728895257956" data-elem-type="text"
+        data-field-top-value="675" data-field-left-value="634" data-field-width-value="560" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="690" data-field-left-res-320-value="10" data-field-width-res-320-value="260"
+        data-field-top-res-480-value="333" data-field-left-res-480-value="269" data-field-width-res-480-value="190"
+        data-field-top-res-640-value="375" data-field-left-res-640-value="310" data-field-width-res-640-value="210"
+        data-field-top-res-960-value="595" data-field-left-res-960-value="456"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 675px; left: 759px; width: 560px;">
+        <div class="tn-atom" field="tn_text_1728895257956" style="line-height: 28px;">活动结算时A客户的综合排名总得分为:</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895268055" data-elem-id="1728895268055" data-elem-type="text"
+        data-field-top-value="707" data-field-left-value="634" data-field-width-value="560" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="712" data-field-left-res-320-value="10" data-field-width-res-320-value="302"
+        data-field-top-res-480-value="353" data-field-left-res-480-value="269" data-field-width-res-480-value="200"
+        data-field-top-res-640-value="393" data-field-left-res-640-value="310" data-field-width-res-640-value="340"
+        data-field-top-res-960-value="627" data-field-left-res-960-value="456" data-field-width-res-960-value="491"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 707px; left: 759px; width: 560px;">
+        <div class="tn-atom" field="tn_text_1728895268055" style="line-height: 25px;">(89.8 x 40%)
+          +(12.2x20%)+(100x10%)+(99.5x15%)+(22x15%)=66.585分</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895357245" data-elem-id="1728895357245" data-elem-type="text"
+        data-field-top-value="660" data-field-left-value="54" data-field-width-value="560" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="344" data-field-left-res-320-value="10" data-field-width-res-320-value="170"
+        data-field-top-res-480-value="333" data-field-left-res-480-value="10" data-field-width-res-480-value="100"
+        data-field-top-res-640-value="351" data-field-left-res-640-value="18" data-field-width-res-640-value="110"
+        data-field-top-res-960-value="551" data-field-left-res-960-value="30"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 660px; left: 179px; width: 560px;">
+        <div class="tn-atom" field="tn_text_1728895357245" style="line-height: 28px;">各项得分计算公式:</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895589699" data-elem-id="1728895589699" data-elem-type="text"
+        data-field-top-value="655" data-field-left-value="215" data-field-width-value="273" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="369" data-field-left-res-320-value="10" data-field-width-res-320-value="160"
+        data-field-top-res-480-value="333" data-field-left-res-480-value="98" data-field-width-res-480-value="110"
+        data-field-top-res-640-value="351" data-field-left-res-640-value="125" data-field-width-res-640-value="110"
+        data-field-top-res-960-value="581" data-field-left-res-960-value="30"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 655px; left: 340px; width: 273px;">
+        <div class="tn-atom" field="tn_text_1728895589699" style="line-height: 37px;"><strong>(n-名次+1)/ n x 100</strong>
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728895634758" data-elem-id="1728895634758" data-elem-type="text"
+        data-field-top-value="694" data-field-left-value="54" data-field-width-value="560" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="395" data-field-left-res-320-value="10" data-field-width-res-320-value="270"
+        data-field-top-res-480-value="349" data-field-left-res-480-value="10" data-field-width-res-480-value="219"
+        data-field-top-res-640-value="373" data-field-left-res-640-value="18" data-field-width-res-640-value="270"
+        data-field-top-res-960-value="620" data-field-left-res-960-value="30" data-field-width-res-960-value="328"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 694px; left: 179px; width: 560px;">
+        <div class="tn-atom" field="tn_text_1728895634758" style="line-height: 19px;">n
+          值为参赛总账户数量。<br>收益率，交易量，绝对资金净值及绝对利润值按高到低排名；最大回撤则会按低到高排名。</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728956834809" data-elem-id="1728956834809" data-elem-type="text"
+        data-field-top-value="194" data-field-left-value="222" data-field-width-value="100" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="100" data-field-left-res-320-value="22" data-field-top-res-480-value="98"
+        data-field-left-res-480-value="53" data-field-width-res-480-value="59" data-field-top-res-640-value="103"
+        data-field-left-res-640-value="115" data-field-width-res-640-value="69" data-field-top-res-960-value="164"
+        data-field-left-res-960-value="104"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 194px; left: 347px; width: 100px;">
+        <div class="tn-atom" field="tn_text_1728956834809" style="line-height: 31px;">第一赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728956865105" data-elem-id="1728956865105" data-elem-type="text"
+        data-field-top-value="222" data-field-left-value="187" data-field-width-value="170" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="112" data-field-left-res-320-value="2" data-field-width-res-320-value="100"
+        data-field-top-res-480-value="116" data-field-left-res-480-value="18" data-field-width-res-480-value="130"
+        data-field-top-res-640-value="122" data-field-left-res-640-value="91" data-field-width-res-640-value="117"
+        data-field-top-res-960-value="192" data-field-left-res-960-value="69"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 222px; left: 312px; width: 170px;">
+        <div class="tn-atom" field="tn_text_1728956865105" style="line-height: 25px;">2024.11.4-2024.11.17</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728956973875" data-elem-id="1728956973875" data-elem-type="text"
+        data-field-top-value="194" data-field-left-value="540" data-field-width-value="120" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="100" data-field-left-res-320-value="140" data-field-width-res-320-value="40"
+        data-field-top-res-480-value="98" data-field-left-res-480-value="203" data-field-width-res-480-value="71"
+        data-field-top-res-640-value="103" data-field-left-res-640-value="279" data-field-width-res-640-value="82"
+        data-field-top-res-960-value="164" data-field-left-res-960-value="420"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 194px; left: 665px; width: 120px;">
+        <div class="tn-atom" field="tn_text_1728956973875" style="line-height: 31px;">第二赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728956973878" data-elem-id="1728956973878" data-elem-type="text"
+        data-field-top-value="222" data-field-left-value="500" data-field-width-value="200" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="112" data-field-left-res-320-value="110" data-field-width-res-320-value="100"
+        data-field-top-res-480-value="116" data-field-left-res-480-value="179" data-field-width-res-480-value="120"
+        data-field-top-res-640-value="122" data-field-left-res-640-value="251" data-field-width-res-640-value="137"
+        data-field-top-res-960-value="192" data-field-left-res-960-value="380"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 222px; left: 625px; width: 200px;">
+        <div class="tn-atom" field="tn_text_1728956973878" style="line-height: 25px;">2024.12.2-2024.12.15</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728957063092" data-elem-id="1728957063092"
+        data-elem-type="image" data-field-top-value="180" data-field-left-value="804" data-field-width-value="248"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="496" data-field-fileheight-value="156"
+        data-field-top-res-320-value="94" data-field-left-res-320-value="216" data-field-width-res-320-value="104"
+        data-field-top-res-480-value="92" data-field-left-res-480-value="322" data-field-width-res-480-value="146"
+        data-field-top-res-640-value="96" data-field-left-res-640-value="420" data-field-width-res-640-value="140"
+        data-field-top-res-960-value="150" data-field-left-res-960-value="682"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 929px; top: 180px; width: 248px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img loaded"
+            data-original="https://static.tildacdn.one/tild6661-6233-4737-b733-656136666536/_72x.png" alt=""
+            imgfield="tn_img_1728957063092"
+            src="https://optim.tildacdn.one/tild6661-6233-4737-b733-656136666536/-/resize/496x/-/format/webp/_72x.png">
+        </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728957065726" data-elem-id="1728957065726" data-elem-type="text"
+        data-field-top-value="193" data-field-left-value="868" data-field-width-value="120" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="100" data-field-left-res-320-value="248" data-field-width-res-320-value="40"
+        data-field-top-res-480-value="98" data-field-left-res-480-value="359" data-field-width-res-480-value="71"
+        data-field-top-res-640-value="102" data-field-left-res-640-value="449" data-field-width-res-640-value="82"
+        data-field-top-res-960-value="163" data-field-left-res-960-value="746"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 193px; left: 993px; width: 120px;">
+        <div class="tn-atom" field="tn_text_1728957065726" style="line-height: 31px;">第三赛段</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728957065730" data-elem-id="1728957065730" data-elem-type="text"
+        data-field-top-value="221" data-field-left-value="828" data-field-width-value="200" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="112" data-field-left-res-320-value="218" data-field-width-res-320-value="100"
+        data-field-top-res-480-value="116" data-field-left-res-480-value="336" data-field-width-res-480-value="117"
+        data-field-top-res-640-value="121" data-field-left-res-640-value="421" data-field-width-res-640-value="137"
+        data-field-top-res-960-value="191" data-field-left-res-960-value="706"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 221px; left: 953px; width: 200px;">
+        <div class="tn-atom" field="tn_text_1728957065730" style="line-height: 25px;">2025.1.6-2025.1.19</div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728958173204" data-elem-id="1728958173204"
+        data-elem-type="image" data-field-top-value="930" data-field-left-value="-173" data-field-width-value="493"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="1972" data-field-fileheight-value="1292"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: -48px; top: 930px; width: 493px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild6262-3433-4365-b135-303561366430/2x.png" alt=""
+            imgfield="tn_img_1728958173204"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728958178531" data-elem-id="1728958178531"
+        data-elem-type="image" data-field-top-value="1300" data-field-left-value="-173" data-field-width-value="493"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="1972" data-field-fileheight-value="1292"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: -48px; top: 1300px; width: 493px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild3839-6565-4038-b735-623838653636/2x.png" alt=""
+            imgfield="tn_img_1728958178531"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728958196513" data-elem-id="1728958196513"
+        data-elem-type="image" data-field-top-value="930" data-field-left-value="420" data-field-width-value="544"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2176" data-field-fileheight-value="1284"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 545px; top: 930px; width: 544px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild6661-3862-4165-b663-666166373862/2x.png" alt=""
+            imgfield="tn_img_1728958196513"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221728958278898" data-elem-id="1728958278898"
+        data-elem-type="image" data-field-top-value="1280" data-field-left-value="420" data-field-width-value="544"
+        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value=""
+        data-field-widthunits-value="px" data-field-filewidth-value="2176" data-field-fileheight-value="1284"
+        data-fields="img,width,filewidth,fileheight,top,left,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="left: 545px; top: 1280px; width: 544px;">
+        <div class="tn-atom"> <img class="tn-atom__img t-img"
+            data-original="https://static.tildacdn.one/tild3061-3364-4037-a163-663961643036/2x.png" alt=""
+            imgfield="tn_img_1728958278898"> </div>
+      </div>
+      <div class="t396__elem tn-elem tn-elem__8128265221729170780398" data-elem-id="1729170780398" data-elem-type="text"
+        data-field-top-value="755" data-field-left-value="255" data-field-width-value="690" data-field-axisy-value="top"
+        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+        data-field-leftunits-value="px" data-field-heightunits-value="" data-field-widthunits-value="px"
+        data-field-top-res-320-value="759" data-field-left-res-320-value="10" data-field-width-res-320-value="300"
+        data-field-top-res-480-value="395" data-field-left-res-480-value="60" data-field-width-res-480-value="360"
+        data-field-top-res-640-value="421" data-field-left-res-640-value="140" data-field-width-res-640-value="360"
+        data-field-top-res-960-value="700" data-field-left-res-960-value="200" data-field-width-res-960-value="560"
+        data-fields="top,left,width,container,axisx,axisy,widthunits,leftunits,topunits"
+        style="top: 755px; left: 380px; width: 690px;">
+        <div class="tn-atom" field="tn_text_1729170780398" style="line-height: 22px;">注：当前排名不包括最大回撤，该分数将在赛段结束后统一计算。
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>t_onFuncLoad('t396_initialScale', function () { t396_initialScale('812826522'); }); t_onReady(function () { t_onFuncLoad('t396_init', function () { t396_init('812826522'); }); });</script>
+</div>
+
+<script>
+  var activeTabBgImage = 'https://optim.tildacdn.one/tild6661-6233-4737-b733-656136666536/-/resize/496x/-/format/webp/_72x.png';
+  var inActiveTabBgImage = 'https://optim.tildacdn.one/tild6661-6233-4737-b733-656136666536/-/resize/496x/-/format/webp/_72x.png';
+
+  var ruleChartImageMap = [
+    'https://optim.tildacdn.one/tild6461-3166-4462-b834-386664653833/-/resize/986x/-/format/webp/2x_1.png',
+    'https://optim.tildacdn.one/tild6262-3433-4365-b135-303561366430/-/resize/986x/-/format/webp/2x_1.png',
+    'https://optim.tildacdn.one/tild3839-6565-4038-b735-623838653636/-/resize/986x/-/format/webp/2x_1.png',
+  ];
+
+  var ruleTableImageMap = [
+    'https://optim.tildacdn.one/tild3034-6363-4666-b938-313034656363/-/format/webp/22x.png',
+    'https://optim.tildacdn.one/tild6661-3862-4165-b663-666166373862/-/format/webp/22x.png',
+    'https://optim.tildacdn.one/tild3061-3364-4037-a163-663961643036/-/format/webp/22x.png',
+  ];
+
+  var formulaTextMap = [
+    '(89.8 x 40%) +(12.2x20%)+(100x10%)+(99.5x15%)+(22x15%)=66.585分',
+    '(89.8 x 40%) +(12.2x20%)+(100x10%)+(99.5x15%)+(22x10%)+(79.3x10%)=68.44分',
+    '(89.8 x 40%) +(12.2x20%)+(100x10%)+(99.5x15%)+(22x10%)+(79.3x10%)=68.44分'
+  ];
+
+  try {
+    let gameRuleTabIndex = 0;
+    const $tabElements = [
+      {
+        bgImage: document.querySelector('[data-elem-id="1728895140967"] .tn-atom img'),
+        text: document.querySelector('[data-elem-id="1728956834809"] .tn-atom'),
+        desc: document.querySelector('[data-elem-id="1728956865105"] .tn-atom'),
+      },
+      {
+        bgImage: document.querySelector('[data-elem-id="1728895144543"] .tn-atom img'),
+        text: document.querySelector('[data-elem-id="1728956973875"] .tn-atom'),
+        desc: document.querySelector('[data-elem-id="1728956973878"] .tn-atom'),
+      },
+      {
+        bgImage: document.querySelector('[data-elem-id="1728957063092"] .tn-atom img'),
+        text: document.querySelector('[data-elem-id="1728957065726"] .tn-atom'),
+        desc: document.querySelector('[data-elem-id="1728957065730"] .tn-atom'),
+      }
+    ];
+
+    const $step1BgImage = document.querySelector(
+      '[data-elem-id="1728895144543"] .tn-atom img'
+    );
+    const $step2BgImage = document.querySelector(
+      '[data-elem-id="1728957063092"] .tn-atom img'
+    );
+
+    function getInitGameRuleTabIndex() {
+      const step = getCurrentStep()
+      if (step === 'step1_entry' || step === 'step1_match') {
+        gameRuleTabIndex = 0;
+      } else if (step === 'step2_entry' || step === 'step2_match') {
+        gameRuleTabIndex = 1;
+      } else {
+        gameRuleTabIndex = 2;
+      }
+    }
+
+    function changeGameRuleDom() {
+      console.log('update dom with index ' + gameRuleTabIndex)
+      $tabElements.forEach(($els, idx) => {
+        if (gameRuleTabIndex === idx) {
+          console.log('change to active style')
+          $els.bgImage.src = activeTabBgImage;
+          $els.text.classList.add('active-tab-text');
+          $els.desc.classList.add('active-tab-subtext');
+        } else {
+          console.log('change to inactive style')
+          $els.bgImage.src = inActiveTabBgImage;
+          if ($els.text.classList.contains('active-tab-text')) {
+            $els.text.classList.remove('active-tab-text')
+          }
+          if ($els.desc.classList.contains('active-tab-subtext')) {
+            $els.desc.classList.remove('active-tab-subtext')
+          }
+        }
+      })
+    }
+
+    getInitGameRuleTabIndex();
+    changeGameRuleDom();
+
+    $tabElements.forEach(($els, idx) => {
+      console.log($els)
+      $els.bgImage.style.cursor = "pointer";
+      $els.text.style.cursor = "pointer";
+      $els.desc.style.cursor = "pointer";
+      $els.bgImage.addEventListener(
+        "click",
+        function () {
+          if (gameRuleTabIndex !== idx) {
+            console.log('change tab to ' + idx);
+            gameRuleTabIndex = idx;
+            setTimeout(() => {
+              changeGameRuleDom();
+            }, 0);
+          }
+        },
+        false
+      );
+      $els.text.addEventListener(
+        "click",
+        function () {
+          if (gameRuleTabIndex !== idx) {
+            console.log('change tab to ' + idx);
+            gameRuleTabIndex = idx;
+            setTimeout(() => {
+              changeGameRuleDom();
+            }, 0);
+          }
+        },
+        false
+      );
+      $els.desc.addEventListener(
+        "click",
+        function () {
+          if (gameRuleTabIndex !== idx) {
+            console.log('change tab to ' + idx);
+            gameRuleTabIndex = idx;
+            setTimeout(() => {
+              changeGameRuleDom();
+            }, 0);
+          }
+        },
+        false
+      );
+    })
+  } catch (e) {
+    console.error(e)
+  }
+</script>

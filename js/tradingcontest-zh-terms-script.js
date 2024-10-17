@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
   const $showBtn = document.querySelector(
     '[data-elem-id="1729071641047"] .tn-atom'
   );
@@ -14,4 +14,4 @@
     },
     false
   );
-})();
+});
