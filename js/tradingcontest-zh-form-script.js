@@ -37,8 +37,7 @@ function formatTime(time) {
   return { days, hours, minutes, seconds };
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let timer = null;
+try {
   let remainingTime = 0;
   let endDate = 0;
   let title = "";
@@ -130,7 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateTime();
-  timer = setInterval(() => {
+  setInterval(() => {
     updateTime();
   }, 1000);
-});
+} catch (e) {
+  console.error(e);
+}
