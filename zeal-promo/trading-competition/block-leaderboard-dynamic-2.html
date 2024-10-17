@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
 
 <iframe id="block-leaderboard-iframe" class="w-full" style="aspect-ratio: 1/1;"
-  src="https://tilda-html-blocks.imwalson.cn/zeal-promo/trading-competition/block-leaderboard-iframe"></iframe>
+  src="https://tilda-html-blocks.cai10.net/zeal-promo/trading-competition/block-leaderboard-iframe"></iframe>
 
 
 <script>
   window.addEventListener('message', function (event) {
-    if (event.origin.includes('tilda-html-blocks.imwalson.cn') && typeof event.data === "string" && event.data.includes('/')) {
+    if (event.origin.includes('tilda-html-blocks.cai10.net') && typeof event.data === "string" && event.data.includes('/')) {
       document.getElementById('block-leaderboard-iframe').style["aspect-ratio"] = event.data;
     }
   });
