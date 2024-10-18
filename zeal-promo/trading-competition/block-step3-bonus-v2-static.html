@@ -82,14 +82,14 @@
   <script type="text/javascript" src="https://static.tildacdn.com/js/tilda-forms-dict-1.0.min.js"></script>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
+<script src="https://cdn.jsdmirror.com/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdmirror.com/npm/qs@6.13.0/dist/qs.min.js"></script>
+<script src="https://cdn.jsdmirror.com/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.9/dayjs.min.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.9/plugin/utc.js"></script>
 <script src="https://unpkg.com/dayjs@1.8.9/plugin/isSameOrAfter.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
-<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js@master/dist/countUp.umd.js"></script>
+<script src="https://cdn.jsdmirror.com/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://cdn.jsdmirror.com/gh/inorganik/countUp.js@master/dist/countUp.umd.js"></script>
 
 <script>
   // install required dayjs plugins
@@ -2876,10 +2876,27 @@
       })
     }
 
-    fetchCountUpData();
-    countUpTimer = setInterval(() => {
-      fetchCountUpData();
-    }, 1000 * 30);
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          // 如果元素进入视口（交叉比例大于0）
+          if (entry.isIntersecting) {
+            const ele = entry.target;
+
+            fetchCountUpData();
+            countUpTimer = setInterval(() => {
+              fetchCountUpData();
+            }, 1000 * 30);
+
+            // 加载完成后，不再观察
+            observer.unobserve(ele);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    ); // 设置阈值为0.5，当元素50%进入视口时开始加载
+
+    observer.observe(document.querySelector('#rec812772938'));
   } catch (error) {
     console.error(error)
   }

@@ -33,6 +33,12 @@ http-server
 - [jsdelivr](https://www.jsdelivr.com/)
 - [unpkg](https://www.unpkg.com/)
 
+# jsdelivr mirrors
+
+- cdn.jsdmirror.cn
+- jsd.onmicrosoft.cn
+- cdn.jsdmirror.com
+
 ## How to add js file using jsdelivr
 
 Full documentation: https://www.jsdelivr.com/documentation

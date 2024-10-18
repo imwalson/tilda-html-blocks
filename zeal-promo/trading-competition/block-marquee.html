@@ -1,8 +1,14 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
+<link href="https://cdn.jsdmirror.com/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdmirror.com/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://cdn.jsdmirror.com/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdmirror.com/npm/qs@6.13.0/dist/qs.min.js"></script>
+<script src="https://cdn.jsdmirror.com/gh/imwalson/tilda-html-blocks/js/strapi_utils.js"></script>
+
+<script>
+  const strapi = new Strapi({
+    url: "https://service-growth-promo.onrender.com",
+  })
+</script>
 
 <style>
   .marquee {
@@ -51,7 +57,7 @@
 
   .text-container {
     box-sizing: border-box;
-    width: 160px;
+    width: 220px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -160,14 +166,10 @@
 
 
 <script>
-  const strapi = new Strapi({
-    url: "https://service-growth-promo.onrender.com",
-  })
-
   const marqueeBgImages = [
-    'https://optim.tildacdn.one/tild3935-6531-4337-a237-383362613936/-/resize/320x/-/format/webp/32x.png',
-    'https://optim.tildacdn.one/tild3832-6165-4934-b636-383239313332/-/resize/320x/-/format/webp/22x.png',
-    'https://optim.tildacdn.one/tild6531-3161-4963-a130-333133376263/-/resize/320x/-/format/webp/12x.png'
+    'https://optim.tildacdn.one/tild3831-6662-4462-b432-396561373463/-/resize/440x/-/format/webp/12x.png',
+    'https://optim.tildacdn.one/tild3338-3035-4063-b033-393066643037/-/resize/440x/-/format/webp/22x.png',
+    'https://optim.tildacdn.one/tild3638-6535-4837-b131-366331386634/-/resize/440x/-/format/webp/32x.png'
   ]
 
   function marqueeData() {
@@ -185,7 +187,7 @@
         }).then(response => {
           const players = strapiParse(response)
           _this.marqueeList = players.map((item, index) => ({
-            text: `${item.name} 已报名`,
+            text: `${item.name} ${item.mt4_account.substr(0, 7)} 已报名`,
             bgImg: marqueeBgImages[index % 3 || 0]
           }));
         })
@@ -194,7 +196,7 @@
         this.fetchData();
         this.timer = setInterval(() => {
           this.fetchData()
-        }, 1000 * 60);
+        }, 1000 * 30);
       },
       formSubmitListener() {
         setTimeout(() => {
