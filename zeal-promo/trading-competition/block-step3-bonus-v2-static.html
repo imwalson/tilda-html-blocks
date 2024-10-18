@@ -2793,6 +2793,9 @@
     const $othersBonusEle = document.querySelector(
       '[data-elem-id="1728900002139"] .tn-atom'
     );
+    const $bonusUpdateDateEle = document.querySelector(
+      '[data-elem-id="1728887236641"] .tn-atom'
+    );
     $countUpEle.innerHTML = '0';
 
     let countUpTimer = null;
@@ -2800,6 +2803,7 @@
     let myCountUp = new countUp.CountUp($countUpEle, bonus);
     let top3BonusContent = '';
     let othersBonusContent = '';
+    let bonusUpdateDateContent = '';
 
     if (!myCountUp.error) {
       myCountUp.start();
@@ -2835,6 +2839,7 @@
     function insertBonusContent() {
       $top3BonusEle.innerHTML = top3BonusContent;
       $othersBonusEle.innerHTML = othersBonusContent;
+      $bonusUpdateDateEle.innerHTML = bonusUpdateDateContent;
     }
 
     function fetchCountUpData() {
@@ -2858,20 +2863,21 @@
           ¥${format_with_substring(formatBonus(0.12 * bonus))}
         `;
         othersBonusContent = `
-          ¥${formatBonus(0.1 * bonus)}
+          ¥${format_with_substring(formatBonus(0.1 * bonus))}
           <br>
-          ¥${formatBonus(0.09 * bonus)}
+          ¥${format_with_substring(formatBonus(0.09 * bonus))}
           <br>
-          ¥${formatBonus(0.08 * bonus)}
+          ¥${format_with_substring(formatBonus(0.08 * bonus))}
           <br>
-          ¥${formatBonus(0.06 * bonus)}
+          ¥${format_with_substring(formatBonus(0.06 * bonus))}
           <br>
-          ¥${formatBonus(0.05 * bonus)}
+          ¥${format_with_substring(formatBonus(0.05 * bonus))}
           <br>
-          ¥${formatBonus(0.04 * bonus)}
+          ¥${format_with_substring(formatBonus(0.04 * bonus))}
           <br>
-          ¥${formatBonus(0.03 * bonus)}
+          ¥${format_with_substring(formatBonus(0.03 * bonus))}
         `;
+        bonusUpdateDateContent = `每日实时更新<br>最后更新时间：${now.format('MM月DD日')}`;
         insertBonusContent()
       })
     }
