@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-grid-3.0.min.css" type="text/css" media="all"
     onerror="this.loaderr='y';">
   <link rel="stylesheet"
-    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.css?t=1728916484" type="text/css"
+    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56411229.min.css?t=1729490299" type="text/css"
     media="all" onerror="this.loaderr='y';">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;subset=latin,cyrillic"
@@ -23,7 +23,7 @@
     onerror="this.loaderr='y';">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700"
     type="text/css">
-  <link rel="stylesheet" type="text/css" href="/custom.css?t=1728916484">
+  <link rel="stylesheet" type="text/css" href="https://zeal.promo/custom.css?t=1729490299">
   <script nomodule="" src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
   <script type="text/javascript">
     function t_onReady(func) {
@@ -65,7 +65,7 @@
     onerror="this.loaderr='y';"></script>
   <script src="https://static.tildacdn.one/js/tilda-scripts-3.0.min.js" charset="utf-8" defer=""
     onerror="this.loaderr='y';"></script>
-  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56435493.min.js?t=1728916484"
+  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page56411229.min.js?t=1728916484"
     charset="utf-8" async="" onerror="this.loaderr='y';"></script>
   <script src="https://static.tildacdn.one/js/tilda-lazyload-1.0.min.js" charset="utf-8" async=""
     onerror="this.loaderr='y';"></script>
@@ -1060,6 +1060,10 @@
   .tippy-content {
     padding: 0;
   }
+
+  .tippy-arrow {
+    color: #fff;
+  }
 </style>
 
 <script>
@@ -1089,17 +1093,18 @@
     '[data-elem-id="1728896664681"] .tn-atom'
   );
   $claimBtn.style.cursor = "pointer";
+  const claimQrImage = document.querySelector('[data-elem-id="1729147811911"] img').dataset.original;
 
   setTimeout(() => {
     const options = {
-      content: '<img class="tn-atom__img t-img loaded" style="width: 100px;" src="https://optim.tildacdn.one/tild3530-3263-4966-b432-646665623864/2x.png">',
+      content: `<img class="tn-atom__img t-img loaded" style="width: 100px;" src="${claimQrImage}">`,
       allowHTML: true,
       appendTo: $claimBtn,
       arrow: false,
       theme: 'light',
+      trigger: 'click'
     };
     if (isMobile.any()) {
-      options.trigger = 'click';
       options.placement = 'top-end';
     }
     tippy($claimBtn, options);
