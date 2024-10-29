@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue qrcode sample</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/qrcode@1.5.0/build/qrcode.js"></script>
+  <script src="https://unpkg.com/@chenfengyuan/vue-qrcode@2"></script>
+</head>
+
+<body>
+  <div id="app">
+    <vue-qrcode :value="qrcode1" :options="options"></vue-qrcode>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          qrcode1: 'http://zlink.global/pa?agentnumber=reg&utm_source=website&utm_medium=banner&utm_campaign=cnv_cn_cn_cnua_evergreen_caishi-baidu-seo_240718&utm_content=reg&is_paid=false',
+          options: {
+            width: 300,
+            margin: 1,
+            // color: {
+            //   dark: '#0074d9',
+            //   light: '#7fdbff',
+            // },
+          }
+        }
+      }
+    });
+
+    app.component(VueQrcode.name, VueQrcode);
+    app.mount('#app');
+  </script>
+</body>
+
+</html>
