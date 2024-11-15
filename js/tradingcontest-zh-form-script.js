@@ -47,6 +47,7 @@ try {
     notice: "",
   };
 
+  const $formBlock = document.querySelector("#rec813140983");
   const $days = document.querySelector('[data-elem-id="1728884842896"] strong');
   const $hours = document.querySelector(
     '[data-elem-id="1728885018996"] strong'
@@ -122,8 +123,14 @@ try {
     if ($formContainer) {
       if (!formStatus.visable) {
         $formContainer.style.display = "none";
+        if ($formBlock) {
+          $formBlock.style.display = "none";
+        }
       } else {
         $formContainer.style.display = "block";
+        if ($formBlock) {
+          $formBlock.style.display = "block";
+        }
       }
     }
   }

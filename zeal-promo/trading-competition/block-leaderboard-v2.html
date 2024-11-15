@@ -8538,18 +8538,18 @@
               if (i > 2) {
                 $col.rank.innerText = record.rank;
               }
-              $col.name.innerText = record.name || '-';
+              $col.name.innerText = `${record.name.substr(0, 1)}**` || '-';
               $col.mt4_account.innerText = record.mt4_account || '-';
-              $col.percentage_gain.innerText = record.percentage_gain ? `${record.percentage_gain}%` : '-%';
-              $col.trading_volume.innerText = record.trading_volume ? `${record.trading_volume}%` : '-%';
+              $col.percentage_gain.innerText = record.percentage_gain ? `${record.percentage_gain}` : '-';
+              $col.trading_volume.innerText = record.trading_volume ? `${record.trading_volume}` : '-';
               $col.absolute_profit.innerText = record.absolute_profit ? `${record.absolute_profit}` : '-';
               $col.equity.innerText = record.equity ? `${record.equity}` : '-';
               $col.score.innerText = record.score ? `${record.score}` : '-';
             } else {
               $col.name.innerText = '-';
               $col.mt4_account.innerText = '-';
-              $col.percentage_gain.innerText = '-%';
-              $col.trading_volume.innerText = '-%';
+              $col.percentage_gain.innerText = '-';
+              $col.trading_volume.innerText = '-';
               $col.absolute_profit.innerText = '-';
               $col.equity.innerText = '-';
               $col.score.innerText = '-';
@@ -8557,6 +8557,8 @@
           }
           $rankTableDate.innerText = now.format('截至YYYY年MM月DD日');
           $rankTableBlock.style.display = 'block';
+          // reset lazyload to fix image not shown
+          t_lazyload_update()
         })
       }
 
