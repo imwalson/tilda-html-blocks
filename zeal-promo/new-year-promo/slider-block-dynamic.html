@@ -3676,7 +3676,7 @@
 <script>
   const rewardMap = [
     {
-      levelName: '至尊礼遇',
+      levelName: '至尊礼遇 (20份)',
       rewards: [
         {
           name: '飞天茅台酒（整箱）',
@@ -3685,7 +3685,7 @@
       ]
     },
     {
-      levelName: '金钻礼遇',
+      levelName: '金钻礼遇 (80份)',
       rewards: [
         {
           name: '茅台15年',
@@ -3694,7 +3694,7 @@
       ]
     },
     {
-      levelName: '银钻礼遇',
+      levelName: '银钻礼遇 (200份)',
       rewards: [
         {
           name: '彩釉珍品茅台',
@@ -3703,7 +3703,7 @@
       ]
     },
     {
-      levelName: '钻石礼遇',
+      levelName: '钻石礼遇 (200份)',
       rewards: [
         {
           name: '精品茅台',
@@ -3712,7 +3712,7 @@
       ]
     },
     {
-      levelName: '铂金礼遇(三选一)',
+      levelName: '铂金礼遇 (500份)',
       rewards: [
         {
           name: `Carruades de Lafite<br>红酒（1支）`,
@@ -3729,7 +3729,7 @@
       ]
     },
     {
-      levelName: '黄金礼遇(三选一)',
+      levelName: '黄金礼遇 (三选一)',
       rewards: [
         {
           name: `中国黄金2克<br>（可定制刻字）`,
@@ -3746,7 +3746,7 @@
       ]
     },
     {
-      levelName: '白银礼遇(二选一)',
+      levelName: '白银礼遇 (二选一)',
       rewards: [
         {
           name: `山海之间香薰蜡烛`,
@@ -3912,6 +3912,7 @@
       const rewardObj = rewardMap[rewardLevel - 1];
       if (rewardObj) {
         renderRewardInfo(rewardObj)
+        // console.log('updateSliderDom, level: ' + rewardLevel)
       }
     }
 
@@ -3927,13 +3928,16 @@
       })
       if (info.rewards.length === 1) {
         $rewardImageContainers[2].src = info.rewards[0].image;
+        $rewardImageContainers[2].dataset.original = info.rewards[0].image;
         $rewardNameContainers[2].innerHTML = info.rewards[0].name;
         $rewardImageContainers[2].style.display = 'block';
         $rewardNameContainers[2].style.display = 'block';
       } else if (info.rewards.length === 2) {
         $rewardImageContainers[1].src = info.rewards[0].image;
+        $rewardImageContainers[1].dataset.original = info.rewards[0].image;
         $rewardNameContainers[1].innerHTML = info.rewards[0].name;
         $rewardImageContainers[3].src = info.rewards[1].image;
+        $rewardImageContainers[3].dataset.original = info.rewards[1].image;
         $rewardNameContainers[3].innerHTML = info.rewards[1].name;
         $rewardImageContainers[1].style.display = 'block';
         $rewardNameContainers[1].style.display = 'block';
@@ -3941,10 +3945,13 @@
         $rewardNameContainers[3].style.display = 'block';
       } else if (info.rewards.length === 3) {
         $rewardImageContainers[0].src = info.rewards[0].image;
+        $rewardImageContainers[0].dataset.original = info.rewards[0].image;
         $rewardNameContainers[0].innerHTML = info.rewards[0].name;
         $rewardImageContainers[2].src = info.rewards[1].image;
+        $rewardImageContainers[2].dataset.original = info.rewards[1].image;
         $rewardNameContainers[2].innerHTML = info.rewards[1].name;
         $rewardImageContainers[4].src = info.rewards[2].image;
+        $rewardImageContainers[4].dataset.original = info.rewards[2].image;
         $rewardNameContainers[4].innerHTML = info.rewards[2].name;
         $rewardImageContainers[0].style.display = 'block';
         $rewardNameContainers[0].style.display = 'block';
@@ -3952,12 +3959,6 @@
         $rewardNameContainers[2].style.display = 'block';
         $rewardImageContainers[4].style.display = 'block';
         $rewardNameContainers[4].style.display = 'block';
-      }
-      // reset lazyload to fix image not shown
-      try {
-        t_lazyload_update()
-      } catch (error) {
-        // t_lazyload_update not defined
       }
     }
 
@@ -3981,7 +3982,7 @@
     }
 
     noUiSlider.create($rangeSlider, {
-      start: [580],
+      start: [575],
       step: 1,
       range: {
         'min': [10],
@@ -3994,14 +3995,26 @@
     updateSliderDom();
     renderRewardTypeDoms();
 
+
     $rangeSlider.noUiSlider.on('update', function (values, handle, unencoded, tap, positions, noUiSlider) {
       const rangeValue = values[0] || 0;
-      const newRewardLevel = Math.ceil(rangeValue / 100);
+      const rangeValueMap = [
+        [0, 98],
+        [98, 198],
+        [198, 310],
+        [310, 420],
+        [420, 520],
+        [520, 620],
+        [620, 700],
+      ];
+      const index = rangeValueMap.findIndex(item => (rangeValue > item[0] && rangeValue <= item[1])) || 0;
+      let newRewardLevel = index + 1;
+      newRewardLevel = newRewardLevel > 7 ? 7 : newRewardLevel;
       if (newRewardLevel !== rewardLevel) {
         rewardLevel = newRewardLevel;
         // console.log('rewardLevel changed to ' + rewardLevel);
-        updateSliderDom();
       }
+      updateSliderDom();
     });
 
     // tab click handler
