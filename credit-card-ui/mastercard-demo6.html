@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    main {
+      background-image: url('https://i.pinimg.com/originals/fa/c0/5c/fac05c110c458e9bab3a3248bfb3c376.jpg'), linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card-main {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      /* background-color: rgba(255, 255, 255, 0.1); */
+      background: rgb(255, 255, 255);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.55) 100%);
+    }
+  </style>
+
+</head>
+
+<body translate="no">
+
+  <body class="bg-slate-100">
+    <!-- Credit Card Form Section -->
+    <main class="flex justify-center items-center h-screen ">
+      <section class="flex flex-col w-[500px] items-center gap-4">
+        <!-- Card Card -->
+        <div class="card-main scale-[2] rounded-xl w-96 h-60 py-4 px-8 text-white">
+          <!-- Bank Name Row -->
+          <div class="flex justify-between">
+            <p class="text-bold"><b>Credit</b>Card</p>
+            <div class="flex relative">
+              <div class="bg-red-500 h-8 w-8 rounded-full absolute right-5 top-1 z-10"></div>
+              <div class="bg-amber-500 h-8 w-8 rounded-full absolute right-0 top-1"></div>
+            </div>
+          </div>
+          <!--  Chip Row  -->
+          <img class="my-2 w-12 h-12" alt="Icons8 flat sim card chip"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Icons8_flat_sim_card_chip.svg/512px-Icons8_flat_sim_card_chip.svg.png">
+
+          <!--  Number Row  -->
+          <label class="text-xs uppercase">Card Number</label>
+          <div class="text-bold text-2xl flex justify-between drop-shadow-2xl">
+            <p id="number-1">1234</p>
+            <p id="number-2">5678</p>
+            <p id="number-3">9876</p>
+            <p id="number-4">5643</p>
+          </div>
+          <!-- Card Holder -->
+          <div class="flex justify-between">
+            <div>
+              <label class="text-xs uppercase">Card Holder</label>
+              <p class="text-xl">Max Mustermann</p>
+            </div>
+            <div>
+              <Label class="text-xs uppercase">Valid Till<label>
+                  <p class="text-xl">02/32</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+
+
+</body>
+
+</html>
