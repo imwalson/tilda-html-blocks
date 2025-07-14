@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--metatextblock-->
+  <title>ZDS 交易大赛 -动态（开发中）</title>
+  <meta name="description" content="2024 ZFX 交易巅峰赛" />
+  <meta property="og:url" content="https://zeal.promo/page64102175.html" />
+  <meta property="og:title" content="ZDS 交易大赛 -动态（开发中）" />
+  <meta property="og:description" content="2024 ZFX 交易巅峰赛" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://zeal.promo/page64102175.html"> <!--/metatextblock-->
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://ws.tildacdn.com">
+  <link rel="dns-prefetch" href="https://static.tildacdn.one">
+  <link rel="shortcut icon"
+    href="https://static.tildacdn.one/tild3563-3262-4833-b931-666466643964/android-chrome-192x1.ico"
+    type="image/x-icon" /> <!-- Assets -->
+  <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script>
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-grid-3.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';" />
+  <link rel="stylesheet"
+    href="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page64102175.min.css?t=1741070017" type="text/css"
+    media="all" onerror="this.loaderr='y';" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-animation-2.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';" />
+  <link rel="stylesheet" href="https://static.tildacdn.one/css/tilda-forms-1.0.min.css" type="text/css" media="all"
+    onerror="this.loaderr='y';" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Roboto:wght@100;300;400;500;700;900"
+    type="text/css" />
+  <link rel="stylesheet" type="text/css" href="https://zeal.promo/custom.css?t=1752458366">
+  <script nomodule src="https://static.tildacdn.one/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script>
+  <script src="https://static.tildacdn.one/js/jquery-1.10.2.min.js" charset="utf-8"
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-scripts-3.0.min.js" charset="utf-8" defer
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/ws/project7084550/tilda-blocks-page64102175.min.js?t=1741070017"
+    charset="utf-8" async onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-lazyload-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-animation-2.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-1.1.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-forms-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-forms-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-animation-sbs-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script src="https://static.tildacdn.one/js/tilda-events-1.0.min.js" charset="utf-8" async
+    onerror="this.loaderr='y';"></script>
+  <script type="text/javascript">window.dataLayer = window.dataLayer || [];</script>
+</head>
+
+<link href="https://gcore.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+<script src="https://gcore.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="https://gcore.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.js" defer></script>
+<script src="https://gcore.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://gcore.jsdelivr.net/npm/qs@6.13.0/dist/qs.min.js"></script>
+<!-- <script src="/js/ranking-data.js"></script> -->
+<!-- <script src="https://walson-dev.oss-cn-hangzhou.aliyuncs.com/zfx/trading-contest/ranking-data.js"></script> -->
+<script>
+  function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+</script>
+
+<style>
+  [x-cloak] {
+    display: none;
+  }
+
+  .block-img {
+    display: block;
+    width: 100%;
+  }
+
+  .section-my-rank {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 690px;
+    background-color: #0c0c49;
+    background-image: url(https://static.tildacdn.one/tild6536-3262-4131-b033-653337393332/-/resize/800x/-/format/webp/_282x_1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex-direction: column;
+  }
+
+  .section-my-rank .top-head {
+    width: 700px;
+    height: auto;
+    aspect-ratio: 700 / 143;
+  }
+
+  .section-my-rank .form-container {
+    width: 80%;
+    max-width: 1080px;
+    height: 433px;
+    background-image: url(https://optim.tildacdn.one/tild6365-6533-4332-b138-383863336665/-/resize/800x/-/format/webp/_162x_1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    margin-top: 40px;
+    display: flex;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 60px;
+    flex-direction: column;
+  }
+
+  .search-box {
+    display: flex;
+    width: 100%;
+    height: 70px;
+  }
+
+  .search-input-wrapper {
+    flex-grow: 1;
+    min-width: 0;
+    height: 70px;
+  }
+
+  #search-input {
+    display: block;
+    box-sizing: border-box;
+    background-color: #0a1c74;
+    white-space: nowrap;
+    color: #7490cd;
+    font-size: 22px;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    border: none;
+    padding: 12px 16px;
+    height: 70px;
+    width: 100%;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right: 0;
+    border-style: solid;
+    border-color: #6b95ff;
+  }
+
+  #search-input:focus-visible {
+    outline: none;
+  }
+
+  #search-input::placeholder {
+    color: #7490cd;
+  }
+
+  #search-button {
+    width: 208px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 22px;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 700;
+    background-image: linear-gradient(0.196turn, rgba(3, 95, 255, 1) 0%, rgba(61, 208, 255, 1) 100%);
+  }
+
+  .search-results {
+    width: 100%;
+    height: 196px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #11126d 0%, #1f32ad 50%, #11126d 100%);
+  }
+
+  .result-table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .result-table-row {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .result-table-row.is-self {
+    height: 72px;
+    background-image: url(https://optim.tildacdn.one/tild3361-3439-4661-b837-323433326435/-/resize/900x/-/format/webp/22x_1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+
+  .result-table-row .table-td {
+    color: #f4f6ff;
+    font-size: 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    opacity: 0.8;
+    width: 33.33%;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .result-table-row.is-self .table-td {
+    color: #ffffff;
+    font-size: 26px;
+    font-family: 'Roboto', Arial, sans-serif;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    opacity: 1;
+  }
+
+  .empty-text {
+    color: rgb(187, 197, 219);
+    font-size: 18px;
+    font-family: 'Roboto', Arial, sans-serif;
+    height: 24px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .tips-text {
+    color: #8099d6;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    text-align: right;
+    padding-top: 14px;
+  }
+
+  .search-btn-loader {
+    zoom: 0.875;
+  }
+
+  .btn-loader,
+  .btn-loader div {
+    box-sizing: border-box;
+  }
+
+  .btn-loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+  }
+
+  .btn-loader div {
+    position: absolute;
+    top: 33.33333px;
+    width: 13.33333px;
+    height: 13.33333px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+
+  .btn-loader div:nth-child(1) {
+    left: 8px;
+    animation: btn-loader1 0.6s infinite;
+  }
+
+  .btn-loader div:nth-child(2) {
+    left: 8px;
+    animation: btn-loader2 0.6s infinite;
+  }
+
+  .btn-loader div:nth-child(3) {
+    left: 32px;
+    animation: btn-loader2 0.6s infinite;
+  }
+
+  .btn-loader div:nth-child(4) {
+    left: 56px;
+    animation: btn-loader3 0.6s infinite;
+  }
+
+  /* small */
+  @media only screen and (max-width : 640px) {
+    .section-my-rank .form-container {
+      width: 98%;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .section-my-rank .top-head {
+      width: 50vw;
+      height: auto;
+      aspect-ratio: 700 / 143;
+    }
+
+    #search-input {
+      font-size: 16px;
+      padding: 6px 6px;
+    }
+
+    #search-button {
+      width: 30vw;
+      font-size: 16px;
+    }
+
+    .result-table-row .table-td {
+      font-size: 14px;
+    }
+
+    .result-table-row.is-self .table-td {
+      font-size: 16px;
+    }
+
+    .empty-text {
+      font-size: 14px;
+    }
+
+    .tips-text {
+      font-size: 13px;
+    }
+  }
+
+  @keyframes btn-loader1 {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes btn-loader3 {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes btn-loader2 {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+</style>
+
+<body class="t-body" style="margin:0;">
+  <!--allrecords-->
+  <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="7084550"
+    data-tilda-page-id="64329947" data-tilda-formskey="fa81c99c3cbffe59e4e38926b7084550" data-tilda-lazy="yes"
+    data-tilda-root-zone="one">
+    <!--blocks-->
+    <div class="section-my-rank" x-data="getMyRankBlockData()" x-init="initFunc($watch)" x-cloak>
+      <div class="top-head">
+        <img class="block-img" src="https://static.tildacdn.com/tild6232-3930-4063-b466-373433373837/_32x_1.png" alt="">
+      </div>
+      <div class="form-container">
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <input id="search-input" type="number" name="search" placeholder="输入我的MT4主账户号码" x-model="mt4_account">
+          </div>
+          <div id="search-button" @click="searchByAccountNumber">
+            <template x-if="searching">
+              <div class="btn-loader search-btn-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </template>
+            <template x-if="!searching">
+              <span>查询我的排名</span>
+            </template>
+          </div>
+        </div>
+        <div class="search-results">
+          <template x-if="searching">
+            <div class="btn-loader">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </template>
+          <template x-if="!searching && !searched">
+            <div class="empty-text">输入账号点击“查询排名”即可搜索</div>
+          </template>
+          <template x-if="!searching && searched && isEmptyResult">
+            <div>
+              <div class="empty-text text-center">未查询到结果</div>
+              <div class="empty-text text-center">请输入MT4主账户号码</div>
+            </div>
+          </template>
+          <template x-if="!searching && searched && !isEmptyResult">
+            <div class="result-table">
+              <div class="result-table-row">
+                <div class="table-td rank text-left">上一排名</div>
+                <div class="table-td number text-center" x-text="prevRank.no"></div>
+                <div class="table-td score text-right" x-text="prevRank.score"></div>
+              </div>
+              <div class="result-table-row is-self">
+                <div class="table-td rank text-left">我的排名</div>
+                <div class="table-td number text-center" x-text="myRank.no"></div>
+                <div class="table-td score text-right" x-text="myRank.score"></div>
+              </div>
+              <div class="result-table-row">
+                <div class="table-td rank text-left">下一排名</div>
+                <div class="table-td number text-center" x-text="nextRank.no"></div>
+                <div class="table-td score text-right" x-text="nextRank.score"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+        <div class="tips-text">*排名和积分将于每日下午1时刷新</div>
+      </div>
+    </div>
+    <!--/blocks-->
+  </div>
+  <!--/allrecords-->
+  <script type="text/javascript">
+    // fetching data on page ready
+    window.rankingData = window.rankingData || [];
+    
+    async function fetchRankingData() {
+      const url = `https://walson-dev.oss-cn-hangzhou.aliyuncs.com/zfx/trading-contest/ranking-data.json?t=${new Date().getTime()}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          console.error(`Response status: ${response.status}`);
+        } else {
+          const json = await response.json();
+          window.rankingData = _.orderBy(json, ['rank'], ['asc']);;
+
+        }
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+
+    if (document.readyState !== 'loading') {
+      fetchRankingData()
+    } else {
+      document.addEventListener('DOMContentLoaded', fetchRankingData)
+    }
+
+  </script>
+  <script>
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          func.apply(context, args);
+        }, wait);
+      };
+    }
+
+    function getMyRankBlockData() {
+      return {
+        mt4_account: '',
+        searched: false,
+        searching: false,
+        isEmptyResult: false,
+        myRank: {
+          no: '',
+          score: '',
+          name: '',
+        },
+        prevRank: {
+          no: '',
+          score: '',
+          name: '',
+        },
+        nextRank: {
+          no: '',
+          score: '',
+          name: '',
+        },
+        search(idx) {
+          this.tabIndex = idx
+        },
+        searchResults(accountNumber) {
+          console.log('search rank of: ', accountNumber)
+        },
+        searchByAccountNumber() {
+          if (this.searching || !this.mt4_account) return;
+
+          const _this = this;
+          this.searching = true;
+
+          // TODO: local search logic
+          setTimeout(() => {
+            let results = [];
+            const index = _.findIndex(window.rankingData, function(o) { return (o?.mt4_account || '').startsWith(`${_this.mt4_account}`) });
+            // console.log('find index: ' + index);
+            if (index === 0) {
+              results = [
+                {
+                  rank: window.rankingData?.[index]?.rank || 0,
+                  score: window.rankingData?.[index]?.score || 0,
+                  name: window.rankingData?.[index]?.name || '',
+                  mt4_account: window.rankingData?.[index]?.mt4_account || '',
+                },
+                {
+                  rank: window.rankingData?.[index + 1]?.rank || '-',
+                  score: window.rankingData?.[index + 1]?.score || '-',
+                  name: window.rankingData?.[index + 1]?.name || '-',
+                  mt4_account: window.rankingData?.[index + 1]?.mt4_account || '-',
+                },
+              ];
+            } else if (index > 0) {
+              results = [
+                {
+                  rank: window.rankingData?.[index - 1]?.rank || 0,
+                  score: window.rankingData?.[index - 1]?.score || 0,
+                  name: window.rankingData?.[index - 1]?.name || '',
+                  mt4_account: window.rankingData?.[index - 1]?.mt4_account || '',
+                },
+                {
+                  rank: window.rankingData?.[index]?.rank || 0,
+                  score: window.rankingData?.[index]?.score || 0,
+                  name: window.rankingData?.[index]?.name || '',
+                  mt4_account: window.rankingData?.[index]?.mt4_account || '',
+                },
+                {
+                  rank: window.rankingData?.[index + 1]?.rank || '-',
+                  score: window.rankingData?.[index + 1]?.score || '-',
+                  name: window.rankingData?.[index + 1]?.name || '-',
+                  mt4_account: window.rankingData?.[index + 1]?.mt4_account || '-',
+                },
+              ];
+            }
+            console.log(results)
+
+            if (results?.length === 3) {
+              _this.prevRank = {
+                no: `No. ${results[0]?.rank || ''}`,
+                score: `${formatNumberWithCommas(results[0]?.score || 0)} 积分`,
+                name: results[0]?.name || '',
+              };
+              _this.myRank = {
+                no: `No. ${results[1]?.rank || ''}`,
+                score: `${formatNumberWithCommas(results[1]?.score || 0)} 积分`,
+                name: results[1]?.name || '',
+              };
+              _this.nextRank = {
+                no: `No. ${results[2]?.rank || ''}`,
+                score: `${formatNumberWithCommas(results[2]?.score || 0)} 积分`,
+                name: results[2]?.name || '',
+              };
+              _this.isEmptyResult = false;
+            } else if (results?.length === 2) {
+              _this.prevRank = {
+                no: '-',
+                score: '-',
+                name: '',
+              };
+              _this.myRank = {
+                no: `No. ${results[0]?.rank || ''}`,
+                score: `${formatNumberWithCommas(results[0]?.score || 0)} 积分`,
+                name: results[0]?.name || '',
+              };
+              _this.nextRank = {
+                no: `No. ${results[1]?.rank || ''}`,
+                score: `${formatNumberWithCommas(results[1]?.score || 0)} 积分`,
+                name: results[1]?.name || '',
+              };
+              _this.isEmptyResult = false;
+            } else {
+              _this.isEmptyResult = true;
+            }
+
+            _this.searched = true;
+            _this.searching = false;
+            
+            this.searching = false;
+          }, 1500);
+        },
+        initFunc($watch) {
+          const _this = this;
+          $watch('mt4_account', debounce((value) => {
+            console.log('value: ', value)
+            _this.searchResults(value);
+          }, 1000))
+        },
+      }
+    }
+  </script>
+
+</body>
+
+</html>

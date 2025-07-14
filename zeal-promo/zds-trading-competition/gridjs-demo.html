@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid viewer</title>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+</head>
+<body>
+  <div id="table"></div>
+</body>
+<script type="text/javascript">
+  // fetching data on page ready
+  window.rankingData = window.rankingData || [];
+  
+  async function fetchRankingData() {
+    const url = `https://walson-dev.oss-cn-hangzhou.aliyuncs.com/zfx/trading-contest/ranking-data.json?t=${new Date().getTime()}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error(`Response status: ${response.status}`);
+      } else {
+        const json = await response.json();
+        window.rankingData = _.orderBy(json, ['rank'], ['asc']);;
+        if (window.rankingData.length) {
+          const grid = new gridjs.Grid({
+            pagination: {
+              limit: 20,
+              summary: false
+            },
+            columns: Object.keys(window.rankingData[0]),
+            data: window.rankingData.map(item => Object.values(item))
+          }).render(document.getElementById('table'));
+        }
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  if (document.readyState !== 'loading') {
+    fetchRankingData()
+  } else {
+    document.addEventListener('DOMContentLoaded', fetchRankingData)
+  }
+
+</script>
+</html>
