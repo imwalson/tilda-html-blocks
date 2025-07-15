@@ -15,7 +15,7 @@
   window.rankingData = window.rankingData || [];
   
   async function fetchRankingData() {
-    const url = `http://bing-tool.oss-cn-beijing.aliyuncs.com/zfx/trading-contest/ranking-data.json?t=${new Date().getTime()}`;
+    const url = `https://bing-tool.oss-cn-beijing.aliyuncs.com/zfx/trading-contest/ranking-data.json?t=${new Date().getTime()}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
