@@ -94,9 +94,11 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 560px;
+    height: auto;
     background-color: #002e81;
     flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 100px;
   }
 
   .section-my-rank .top-head {
@@ -165,7 +167,7 @@
     background-color: transparent;
     white-space: nowrap;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.55;
     font-weight: 400;
@@ -272,6 +274,51 @@
     zoom: 0.875;
   }
 
+  .total-rewards {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin-top: 30px;
+    padding-left: 35px;
+  }
+
+  .total-rewards .reward-texts {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .total-rewards .reward-texts .left-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Roboto',Arial,sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    opacity: 0.8;
+    padding-bottom: 6px;
+    padding-right: 10px;
+  }
+
+  .total-rewards .reward-texts .reward-text {
+    color: #ffd125;
+    font-size: 38px;
+    font-family: 'Roboto',Arial,sans-serif;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .total-rewards .reward-tips {
+    width: 100%;
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Roboto',Arial,sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    opacity: 0.4;
+  }
+
+  /* loader style */
   .btn-loader,
   .btn-loader div {
     box-sizing: border-box;
@@ -316,31 +363,112 @@
   }
 
   /* small */
-  @media only screen and (max-width : 640px) {
+  @media only screen and (max-width : 800px) {
+    .section-my-rank {
+      padding-bottom: 40px;
+    }
+
     .section-my-rank .form-container {
       width: 98%;
-      padding-left: 30px;
-      padding-right: 30px;
+      margin-top: 30px;
+      padding-top: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-image: none;
     }
 
     .section-my-rank .top-head {
-      width: 50vw;
+      width: 60vw;
+      max-width: 264px;
       height: auto;
-      aspect-ratio: 700 / 143;
+      aspect-ratio: 230 / 46;
+      margin-top: 30px;
+    }
+
+    .search-box {
+      height: 46px;
+      padding: 0;
+    }
+
+    .search-input-wrapper {
+      height: 46px;
     }
 
     #search-input {
-      font-size: 16px;
-      padding: 6px 6px;
+      height: 46px;
+      font-size: 12px;
+      padding: 10px;
     }
 
     #search-button {
-      width: 30vw;
-      font-size: 14px;
+      width: 140px;
+      height: 46px;
+      font-size: 12px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
 
     .empty-text {
-      font-size: 14px;
+      font-size: 12px;
+    }
+
+    .section-my-rank .form-container {
+      flex-direction: column;
+    }
+
+    .section-my-rank .form-container .form-main {
+      width: 100%;
+    }
+
+    .section-my-rank .form-container .form-thumb {
+      display: none;
+    }
+
+    .search-results {
+      height: 180px;
+    }
+
+    .result-table {
+      gap: 15px;
+    }
+
+    .text-locked {
+      font-size: 16px;
+    }
+
+    .result-table-row .table-td .text-value {
+      font-size: 18px;
+    }
+
+    .result-table-row .table-td .text-label {
+      font-size: 12px;
+    }
+
+    .result-table-row {
+      height: 50px;
+    }
+
+    .result-table-row .table-td {
+      height: 50px;
+    }
+
+    .total-rewards {
+      margin-top: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .total-rewards .reward-texts .left-text {
+      font-size: 12px;
+    }
+
+    .total-rewards .reward-texts .reward-text {
+      font-size: 20px;
+    }
+
+    .total-rewards .reward-tips {
+      font-size: 10px;
+      padding-top: 5px;
     }
   }
 
@@ -427,19 +555,19 @@
               <div class="result-table">
                 <div class="result-table-row">
                   <div class="table-td">
-                    <template x-if="myRank.unlocked">
+                    <template x-if="myRank.trading_level_unlocked">
                       <div class="text-value">L<span class="text-ml" x-text="myRank.trading_level"></span></div>
                     </template>
-                    <template x-if="!myRank.unlocked">
+                    <template x-if="!myRank.trading_level_unlocked">
                       <div class="text-locked">待解锁</div>
                     </template>
                     <div class="text-label">第一重活跃交易等级</div>
                   </div>
                   <div class="table-td">
-                    <template x-if="myRank.unlocked">
+                    <template x-if="myRank.bonus_level_unlocked">
                       <div class="text-value">L<span class="text-ml" x-text="myRank.bonus_level"></span></div>
                     </template>
-                    <template x-if="!myRank.unlocked">
+                    <template x-if="!myRank.bonus_level_unlocked">
                       <div class="text-locked">待解锁</div>
                     </template>
                     <div class="text-label">第二重加码奖励等级</div>
@@ -451,12 +579,7 @@
                     <div class="text-label">净入金</div>
                   </div>
                   <div class="table-td">
-                    <template x-if="myRank.unlocked">
-                      <div class="text-value" x-text="myRank.trading_volume"></div>
-                    </template>
-                    <template x-if="!myRank.unlocked">
-                      <div class="text-locked">待解锁</div>
-                    </template>
+                    <div class="text-value" x-text="myRank.trading_volume"></div>
                     <div class="text-label">累计交易手</div>
                   </div>
                 </div>
@@ -465,10 +588,21 @@
           </div>
         </div>
         <div class="form-thumb">
-          <img class="thumb-img" src="https://optim.tildacdn.net/tild3439-3665-4839-b832-313336353936/-/resize/620x/-/format/webp/2x_1.png.webp" alt="">
+          <img class="thumb-img" src="https://static.tildacdn.net/tild3439-3665-4839-b832-313336353936/2x_1.png" alt="">
         </div>
       </div>
+
+      <template x-if="!searching && searched && !isEmptyResult && myRank.total_reward">
+        <div class="total-rewards">
+          <div class="reward-texts">
+            <div class="left-text">可领奖励:</div>
+            <div class="reward-text">¥<span x-text="myRank.total_reward"></span></div>
+          </div>
+          <div class="reward-tips">*此奖励仅供客户参考，最终奖励金额以30天活动期结束后的实际结算结果为准。</div>
+        </div>
+      </template>
     </div>
+    
     <!--/blocks-->
   </div>
   <!--/allrecords-->
@@ -522,7 +656,9 @@
           bonus_level: '',
           deposit: '',
           trading_volume: '',
-          unlocked: '',
+          trading_level_unlocked: '',
+          bonus_level_unlocked: '',
+          total_reward: '',
         },
         search(idx) {
           this.tabIndex = idx
@@ -550,7 +686,9 @@
                 bonus_level: window.rankingData?.[index]?.bonus_level || 0,
                 deposit: (window.rankingData?.[index]?.deposit || 0).toLocaleString('en-US'),
                 trading_volume: window.rankingData?.[index]?.trading_volume || 0,
-                unlocked: window.rankingData?.[index]?.unlocked || 0,
+                trading_level_unlocked: window.rankingData?.[index]?.trading_level_unlocked || 0,
+                bonus_level_unlocked: window.rankingData?.[index]?.bonus_level_unlocked || 0,
+                total_reward: (window.rankingData?.[index]?.total_reward || 0).toLocaleString('en-US'),
               }
             }
 
